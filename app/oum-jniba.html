@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>أم جنيبة — Oumjniba | Village du Moyen Atlas, Boulemane (Maroc)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;700&family=Tajawal:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,400;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#hero" aria-label="Oumjniba — accueil / الرئيسية">
+    <img src="../images/logOumjniba.png" alt="Oumjniba — Tradition & Essence" />
+  </a>
+  <ul>
+    <li><a href="#localisation"><span class="lf">Localisation</span><span class="la">الموقع</span></a></li>
+    <li><a href="#histoire"><span class="lf">Histoire</span><span class="la">التاريخ</span></a></li>
+    <li><a href="#about"><span class="lf">Village</span><span class="la">القرية</span></a></li>
+    <li><a href="#services"><span class="lf">Équipements</span><span class="la">المرافق</span></a></li>
+    <li><a href="#associations"><span class="lf">Associations</span><span class="la">الجمعيات</span></a></li>
+    <li><a href="#entreprises"><span class="lf">Entreprises</span><span class="la">المقاولات</span></a></li>
+  </ul>
+  <button id="langToggle" class="lang-btn" type="button" aria-label="Changer de langue / تغيير اللغة">
+    🌐 <span class="lf">العربية</span><span class="la">Français</span>
+  </button>
+</nav>
+
+<section id="hero">
+  <div class="hero-pattern"></div>
+  <div class="geo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <pattern id="geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+        <polygon points="40,0 80,20 80,60 40,80 0,60 0,20" fill="none" stroke="#c8961e" stroke-width="0.5"/>
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#geo)"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow"><span class="lf">Province de Boulemane · Fès-Meknès · Maroc</span><span class="la">إقليم بولمان · فاس مكناس · المغرب</span></p>
+    <h1 class="hero-title">Oumjniba<em>أم جنيبة</em></h1>
+    <p class="hero-sub"><span class="lf">Un douar de montagne au pied du Tichoukt, dans le Moyen Atlas</span><span class="la">دوار جبلي في سفح جبل تيشوكت بالأطلس المتوسط</span></p>
+    <span class="hero-cold">❄️ <span class="lf">Parmi les zones les plus froides d'Afrique</span><span class="la">من أبرد المناطق في إفريقيا</span></span>
+    <div class="hero-divider"></div>
+    <a href="#localisation" class="hero-cta"><span class="lf">Découvrir le village</span><span class="la">اكتشف القرية</span></a>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<div class="admin-banner">
+  <div class="admin-item">
+    <div class="admin-label"><span class="lf">Pays</span><span class="la">الدولة</span></div>
+    <div class="admin-value"><span class="lf">🇲🇦 Maroc</span><span class="la">🇲🇦 المغرب</span></div>
+  </div>
+  <div class="admin-item">
+    <div class="admin-label"><span class="lf">Région</span><span class="la">الجهة</span></div>
+    <div class="admin-value"><span class="lf">Fès-Meknès</span><span class="la">فاس مكناس</span></div>
+  </div>
+  <div class="admin-item">
+    <div class="admin-label"><span class="lf">Province</span><span class="la">الإقليم</span></div>
+    <div class="admin-value"><span class="lf">Boulemane</span><span class="la">بولمان</span></div>
+  </div>
+  <div class="admin-item">
+    <div class="admin-label"><span class="lf">Commune</span><span class="la">الجماعة</span></div>
+    <div class="admin-value"><span class="lf">El Mers</span><span class="la">المرس</span></div>
+  </div>
+</div>
+
+<section id="localisation">
+  <div class="loc-grid">
+    <div class="loc-text reveal">
+      <p class="section-label"><span class="lf">Où sommes-nous ?</span><span class="la">أين نحن؟</span></p>
+      <h2 class="section-title"><span class="lf">Notre position dans le Moyen Atlas</span><span class="la">موقعنا في الأطلس المتوسط</span></h2>
+      <p class="section-intro">
+        <span class="lf">Oumjniba est un douar (village de montagne) isolé de la province de
+        <strong>Boulemane</strong>, dans la région de <strong>Fès-Meknès</strong>. Perché à environ
+        <strong>1&nbsp;931&nbsp;mètres</strong> d'altitude au pied du massif du <strong>Tichoukt</strong>&nbsp;(2&nbsp;796&nbsp;m),
+        ce hameau est réputé pour son isolement hivernal — la neige le coupe régulièrement du reste du monde — et compte
+        parmi les zones les plus froides d'Afrique. Il dépend de la commune rurale d'El Mers et fait partie du Géoparc
+        du Moyen Atlas oriental.</span>
+        <span class="la">أم جنيبة دوار جبلي معزول بإقليم <strong>بولمان</strong>، بجهة <strong>فاس مكناس</strong>.
+        يقع على علوّ يناهز <strong>1931 متراً</strong> في سفح جبل <strong>تيشوكت</strong> (2796 م)، ويُعرف بعزلته الشتوية
+        — إذ يقطعه الثلج بانتظام عن باقي العالم — ويُعدّ من أبرد المناطق في إفريقيا. يتبع الجماعة القروية المرس
+        وهو جزء من جيوبارك الأطلس المتوسط الشرقي.</span>
+      </p>
+
+      <div class="loc-cards">
+        <div class="loc-card">
+          <div class="loc-card-icon">🇲🇦</div>
+          <div>
+            <div class="loc-card-label"><span class="lf">Pays</span><span class="la">الدولة</span></div>
+            <div class="loc-card-val"><span class="lf">Royaume du Maroc</span><span class="la">المملكة المغربية</span></div>
+            <div class="loc-card-sub"><span class="lf">Afrique du Nord</span><span class="la">شمال إفريقيا</span></div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-card-icon">🏛️</div>
+          <div>
+            <div class="loc-card-label"><span class="lf">Région / Province</span><span class="la">الجهة / الإقليم</span></div>
+            <div class="loc-card-val"><span class="lf">Fès-Meknès · Boulemane</span><span class="la">فاس مكناس · بولمان</span></div>
+            <div class="loc-card-sub"><span class="lf">Boulemane, plus haute ville du Maroc (~2 029 m), à ~102 km de Fès</span><span class="la">بولمان، أعلى مدينة بالمغرب (~2029 م)، على بعد ~102 كلم من فاس</span></div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-card-icon">🏘️</div>
+          <div>
+            <div class="loc-card-label"><span class="lf">Commune</span><span class="la">الجماعة</span></div>
+            <div class="loc-card-val"><span class="lf">El Mers</span><span class="la">جماعة المرس</span></div>
+            <div class="loc-card-sub"><span class="lf">Code postal 33102 · Oumjniba en est un douar</span><span class="la">الرمز البريدي 33102 · أم جنيبة دوار تابع لها</span></div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-card-icon">⛰️</div>
+          <div>
+            <div class="loc-card-label"><span class="lf">Massif</span><span class="la">الجبل</span></div>
+            <div class="loc-card-val"><span class="lf">Tichoukt</span><span class="la">تيشوكت</span></div>
+            <div class="loc-card-sub"><span class="lf">Sommet enneigé culminant à 2 796 m, cœur du Moyen Atlas oriental</span><span class="la">قمة مكسوّة بالثلج تبلغ 2796 م، قلب الأطلس المتوسط الشرقي</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="loc-map-block">
+        <p class="loc-map-title"><span class="lf">Carte interactive</span><span class="la">خريطة تفاعلية</span></p>
+        <div id="map"></div>
+        <p class="map-caption"><span class="lf">Localisation exacte du douar d'Oumjniba (commune d'El Mers, secteur du Tichoukt) · Plus Code 8C5Q88G7+XV.</span><span class="la">الموقع الدقيق لدوار أم جنيبة (جماعة المرس، قطاع تيشوكت) · Plus Code 8C5Q88G7+XV.</span></p>
+        <div class="loc-info-grid">
+          <div class="loc-info-item"><strong><span class="lf">LATITUDE</span><span class="la">خط العرض</span></strong><span>33°19′39″ N</span></div>
+          <div class="loc-info-item"><strong><span class="lf">LONGITUDE</span><span class="la">خط الطول</span></strong><span>4°41′07″ O</span></div>
+          <div class="loc-info-item"><strong><span class="lf">ALTITUDE</span><span class="la">الارتفاع</span></strong><span>1 931 m</span></div>
+          <div class="loc-info-item"><strong><span class="lf">RÉGION</span><span class="la">الجهة</span></strong><span><span class="lf">Moyen Atlas</span><span class="la">الأطلس المتوسط</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="histoire">
+  <p class="section-label reveal"><span class="lf">Mémoire & territoire</span><span class="la">ذاكرة و أرض</span></p>
+  <h2 class="section-title reveal"><span class="lf">Une terre de montagne</span><span class="la">أرض جبلية</span></h2>
+  <div class="history-layout">
+    <div class="reveal">
+      <p class="history-intro">
+        <span class="lf">Le pays du Tichoukt est une terre amazighe ancienne, longtemps domaine des Aït Seghrouchen. Vue de loin,
+        la montagne paraît toute blanche en hiver, comme si la vie y était impossible ; mais ses vallées profondes et abritées
+        — notamment la dépression du Joua, qui longe la base orientale du massif — ont toujours offert refuge et ressources.
+        Ces hautes vallées ont nourri une tradition pastorale fondée sur la transhumance d'été et une longue culture de résistance
+        et d'autonomie montagnarde. Oumjniba s'inscrit dans cet héritage.</span>
+        <span class="la">بلاد تيشوكت أرض أمازيغية عريقة، طالما كانت موطن آيت سغروشن. من بعيد يبدو الجبل أبيض تماماً في الشتاء
+        وكأنّ الحياة فيه مستحيلة؛ لكنّ وديانه العميقة المحميّة — خاصة منخفض الجوى الممتدّ على السفح الشرقي للجبل — وفّرت دوماً
+        الملجأ والموارد. غذّت هذه الوديان العليا تقليداً رعوياً قائماً على الترحال الصيفي وثقافة عريقة من المقاومة والاستقلال الجبلي.
+        وتندرج أم جنيبة ضمن هذا الإرث.</span>
+      </p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot">1</div>
+          <div>
+            <div class="tl-date"><span class="lf">Peuplement amazigh</span><span class="la">استيطان أمازيغي</span></div>
+            <div class="tl-title"><span class="lf">Le pays des Aït Seghrouchen</span><span class="la">بلاد آيت سغروشن</span></div>
+            <div class="tl-desc"><span class="lf">Les hauteurs du Tichoukt sont depuis des siècles le territoire de tribus amazighes vivant de l'élevage et adaptées à un climat de montagne rigoureux.</span><span class="la">ظلّت مرتفعات تيشوكت لقرون أرضاً لقبائل أمازيغية تعيش على تربية الماشية وتأقلمت مع مناخ جبلي قاسٍ.</span></div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">2</div>
+          <div>
+            <div class="tl-date"><span class="lf">Vie pastorale</span><span class="la">حياة رعوية</span></div>
+            <div class="tl-title"><span class="lf">Transhumance & vallées du Joua</span><span class="la">الترحال و وديان الجوى</span></div>
+            <div class="tl-desc"><span class="lf">La dépression du Joua, abritée le long du massif, a longtemps servi de refuge et de couloir de transhumance, garantissant la survie en altitude.</span><span class="la">شكّل منخفض الجوى المحميّ على طول الجبل ملجأً وممراً للترحال لزمن طويل، مما ضمن العيش في الأعالي.</span></div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">3</div>
+          <div>
+            <div class="tl-date"><span class="lf">Résistance montagnarde</span><span class="la">مقاومة جبلية</span></div>
+            <div class="tl-title"><span class="lf">Un bastion d'autonomie</span><span class="la">معقل للاستقلال</span></div>
+            <div class="tl-desc"><span class="lf">Difficiles d'accès et tenaces, les communautés du Tichoukt ont longtemps préservé leur indépendance face aux pouvoirs extérieurs.</span><span class="la">بفضل صعوبة الوصول إليها وصلابتها، حافظت ساكنة تيشوكت طويلاً على استقلالها في مواجهة السلطات الخارجية.</span></div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">4</div>
+          <div>
+            <div class="tl-date"><span class="lf">Maroc moderne</span><span class="la">المغرب الحديث</span></div>
+            <div class="tl-title"><span class="lf">Désenclavement & équipements</span><span class="la">فك العزلة و المرافق</span></div>
+            <div class="tl-desc"><span class="lf">Route, école et électrification ont peu à peu rompu l'isolement du douar, tout en préservant son mode de vie montagnard.</span><span class="la">أسهمت الطريق والمدرسة والكهربة تدريجياً في فك عزلة الدوار مع الحفاظ على نمط عيشه الجبلي.</span></div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">5</div>
+          <div>
+            <div class="tl-date"><span class="lf">Aujourd'hui</span><span class="la">اليوم</span></div>
+            <div class="tl-title"><span class="lf">Géoparc du Moyen Atlas oriental</span><span class="la">جيوبارك الأطلس المتوسط الشرقي</span></div>
+            <div class="tl-desc"><span class="lf">Oumjniba s'inscrit dans une dynamique de valorisation du patrimoine naturel et culturel portée par les acteurs locaux du géoparc.</span><span class="la">تندرج أم جنيبة ضمن دينامية لتثمين التراث الطبيعي والثقافي يقودها الفاعلون المحليون للجيوبارك.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="history-highlight">
+        <p><span class="lf">« La montagne paraît blanche et hostile, mais ses vallées cachées ont toujours nourri ceux qui savent l'habiter. »</span><span class="la">« يبدو الجبل أبيض وقاسياً، لكنّ وديانه الخفيّة غذّت دوماً من يُحسن العيش فيه. »</span></p>
+        <cite><span class="lf">— Sagesse du Tichoukt</span><span class="la">— حكمة من تيشوكت</span></cite>
+      </div>
+      <div class="history-highlight" style="background:linear-gradient(135deg,var(--moss),var(--pine-2));">
+        <p><span class="lf">« Dans une bouche fermée, n'entrent pas les mouches. »</span><span class="la">« الفم المسدود ما يدخلوش الذبان. »</span></p>
+        <cite><span class="lf">— Proverbe amazigh</span><span class="la">— مثل أمازيغي</span></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <p class="section-label reveal"><span class="lf">Le village</span><span class="la">القرية</span></p>
+  <h2 class="section-title reveal"><span class="lf">La vie à Oumjniba</span><span class="la">الحياة في أم جنيبة</span></h2>
+  <p class="section-intro reveal"><span class="lf">À près de 1 931 mètres d'altitude, Oumjniba vit au rythme de la montagne : étés courts et frais, hivers longs et neigeux qui isolent le douar, et des liens communautaires forgés par l'isolement et l'entraide.</span><span class="la">على علوّ يناهز 1931 متراً، تعيش أم جنيبة على إيقاع الجبل: صيف قصير ومنعش، وشتاء طويل وثلجي يعزل الدوار، وروابط مجتمعية صاغتها العزلة والتآزر.</span></p>
+
+  <div class="about-grid">
+    <div class="about-card reveal">
+      <span class="about-card-icon">❄️</span>
+      <h3><span class="lf">Géographie & climat</span><span class="la">الجغرافيا و المناخ</span></h3>
+      <p><span class="lf">Perché au pied du Tichoukt, le village connaît l'un des climats les plus rudes du pays : la neige isole le douar plusieurs semaines en hiver, et les températures comptent parmi les plus basses d'Afrique du Nord.</span><span class="la">في سفح تيشوكت، تعرف القرية واحداً من أقسى المناخات بالبلاد: يعزل الثلج الدوار أسابيع في الشتاء، وتُعدّ درجات الحرارة من بين الأدنى في شمال إفريقيا.</span></p>
+    </div>
+    <div class="about-card reveal">
+      <span class="about-card-icon">🐑</span>
+      <h3><span class="lf">Pastoralisme & transhumance</span><span class="la">الرعي و الترحال</span></h3>
+      <p><span class="lf">L'élevage ovin et caprin et la transhumance d'été structurent l'économie locale, un savoir-faire montagnard transmis de génération en génération.</span><span class="la">تشكّل تربية الأغنام والماعز والترحال الصيفي عماد الاقتصاد المحلي، وهي مهارة جبلية تتوارثها الأجيال.</span></p>
+    </div>
+    <div class="about-card reveal">
+      <span class="about-card-icon">👨‍👩‍👧‍👦</span>
+      <h3><span class="lf">Communauté & solidarité</span><span class="la">المجتمع و التضامن</span></h3>
+      <p><span class="lf">Comme dans tous les douars du Moyen Atlas, la famille et l'entraide de voisinage sont essentielles, surtout pendant les longs mois d'hiver où la solidarité fait vivre le village.</span><span class="la">كما في كل دواوير الأطلس المتوسط، تبقى الأسرة والتعاون بين الجيران أساسيين، خاصة خلال أشهر الشتاء الطويلة حيث يُحيي التضامن القرية.</span></p>
+    </div>
+    <div class="about-card reveal">
+      <span class="about-card-icon">🪕</span>
+      <h3><span class="lf">Patrimoine amazigh</span><span class="la">التراث الأمازيغي</span></h3>
+      <p><span class="lf">Langue tamazight, proverbes, contes et traditions orales forment un patrimoine vivant, reflet de la sagesse et de la mémoire des anciens du Tichoukt.</span><span class="la">اللغة الأمازيغية والأمثال والحكايات والتقاليد الشفهية تشكّل تراثاً حياً يعكس حكمة وذاكرة شيوخ تيشوكت.</span></p>
+    </div>
+  </div>
+
+  <div class="stats-band reveal">
+    <div class="stat-item"><div class="stat-n">1 931 m</div><div class="stat-l"><span class="lf">ALTITUDE</span><span class="la">الارتفاع</span></div></div>
+    <div class="stat-item"><div class="stat-n">2 796 m</div><div class="stat-l"><span class="lf">MASSIF TICHOUKT</span><span class="la">كتلة تيشوكت</span></div></div>
+    <div class="stat-item"><div class="stat-n">33102</div><div class="stat-l"><span class="lf">CODE POSTAL</span><span class="la">الرمز البريدي</span></div></div>
+    <div class="stat-item"><div class="stat-n">~110 km</div><div class="stat-l"><span class="lf">DE FÈS</span><span class="la">عن فاس</span></div></div>
+  </div>
+</section>
+
+<section id="services">
+  <p class="section-label reveal"><span class="lf">Au service des habitants</span><span class="la">في خدمة السكان</span></p>
+  <h2 class="section-title reveal"><span class="lf">Équipements</span><span class="la">المرافق</span></h2>
+  <p class="section-intro reveal"><span class="lf">Les infrastructures et équipements de proximité qui accompagnent la vie quotidienne du douar.</span><span class="la">المرافق والبنيات القريبة التي ترافق الحياة اليومية للدوار.</span></p>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">🏫</span>
+      <div class="service-name"><span class="lf">École publique d'Oumjniba</span><span class="la">المدرسة العمومية بأم جنيبة</span></div>
+      <p class="service-desc"><span class="lf">L'école du douar accueille les enfants du village (Commune El Mers). Contact : +212 654 998 613.</span><span class="la">مدرسة الدوار تستقبل أطفال القرية (جماعة المرس). للتواصل: 212654998613+.</span></p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🕌</span>
+      <div class="service-name"><span class="lf">Mosquée</span><span class="la">المسجد</span></div>
+      <p class="service-desc"><span class="lf">Lieu de culte et de rassemblement, repère central de la vie spirituelle et sociale du village.</span><span class="la">مكان للعبادة والتجمّع، ومعلَم مركزي للحياة الروحية والاجتماعية بالقرية.</span></p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">⚕️</span>
+      <div class="service-name"><span class="lf">Santé de proximité</span><span class="la">الصحة القريبة</span></div>
+      <p class="service-desc"><span class="lf">Soins de base et orientation vers les structures sanitaires d'El Mers et de Boulemane, malgré l'éloignement.</span><span class="la">خدمات صحية أساسية وتوجيه نحو المرافق الصحية بالمرس وبولمان، رغم البُعد.</span></p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">💧</span>
+      <div class="service-name"><span class="lf">Eau & électricité</span><span class="la">الماء و الكهرباء</span></div>
+      <p class="service-desc"><span class="lf">Le raccordement aux réseaux essentiels a transformé le quotidien d'un village longtemps isolé.</span><span class="la">غيّر الربط بالشبكات الأساسية الحياة اليومية لقرية ظلّت معزولة طويلاً.</span></p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🛣️</span>
+      <div class="service-name"><span class="lf">Routes & désenclavement</span><span class="la">الطرق و فك العزلة</span></div>
+      <p class="service-desc"><span class="lf">Les pistes et routes de montagne relient le douar à El Mers et Boulemane — parfois coupées par la neige en hiver.</span><span class="la">تربط المسالك والطرق الجبلية الدوار بالمرس وبولمان — وتقطعها الثلوج أحياناً في الشتاء.</span></p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🛒</span>
+      <div class="service-name"><span class="lf">Commerces de proximité</span><span class="la">التجارة الجوارية</span></div>
+      <p class="service-desc"><span class="lf">Petits commerces et souk hebdomadaire de la commune répondant aux besoins essentiels des habitants.</span><span class="la">محلات تجارية صغيرة والسوق الأسبوعي للجماعة تلبّي الحاجيات الأساسية للسكان.</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="associations">
+  <p class="section-label reveal"><span class="lf">Société civile</span><span class="la">المجتمع المدني</span></p>
+  <h2 class="section-title reveal"><span class="lf">Le tissu associatif</span><span class="la">النسيج الجمعوي</span></h2>
+  <p class="section-intro reveal"><span class="lf">Des acteurs locaux portent le développement et la valorisation du territoire <em>(à compléter avec les associations propres au douar)</em>.</span><span class="la">فاعلون محليون يحملون تنمية وتثمين المجال <em>(يُستكمل بجمعيات الدوار الخاصة)</em>.</span></p>
+
+  <div class="assoc-grid">
+    <div class="assoc-card reveal">
+      <div class="assoc-num">01</div>
+      <div class="assoc-dot"></div>
+      <div class="assoc-name"><span class="lf">Association El Harche pour le Développement</span><span class="la">جمعية الحرش للتنمية</span></div>
+      <p class="assoc-desc"><span class="lf">Association de développement local basée à Skoura M'daz (province de Boulemane), active dans la valorisation et le soutien du territoire.</span><span class="la">جمعية تنمية محلية مقرها سكورة امداز (إقليم بولمان)، نشطة في تثمين ودعم المجال الترابي.</span></p>
+      <span class="assoc-tag"><span class="lf">DÉVELOPPEMENT</span><span class="la">تنمية</span></span>
+    </div>
+    <div class="assoc-card reveal">
+      <div class="assoc-num">02</div>
+      <div class="assoc-dot"></div>
+      <div class="assoc-name"><span class="lf">ANEJDI — Géoparc Moyen Atlas oriental</span><span class="la">جيوبارك الأطلس المتوسط الشرقي</span></div>
+      <p class="assoc-desc"><span class="lf">Initiative de valorisation du patrimoine géologique, naturel et culturel de la région, dont fait partie Oumjniba.</span><span class="la">مبادرة لتثمين التراث الجيولوجي والطبيعي والثقافي للمنطقة، التي تنتمي إليها أم جنيبة.</span></p>
+      <span class="assoc-tag"><span class="lf">PATRIMOINE</span><span class="la">تراث</span></span>
+    </div>
+    <div class="assoc-card reveal">
+      <div class="assoc-num">03</div>
+      <div class="assoc-dot"></div>
+      <div class="assoc-name"><span class="lf">Association culturelle & jeunesse</span><span class="la">الجمعية الثقافية و الشباب</span></div>
+      <p class="assoc-desc"><span class="lf">Encadrement des jeunes, transmission du patrimoine amazigh et animation de la vie du village. <em>(à personnaliser)</em></span><span class="la">تأطير الشباب ونقل التراث الأمازيغي وتنشيط حياة القرية. <em>(للتخصيص)</em></span></p>
+      <span class="assoc-tag"><span class="lf">CULTURE</span><span class="la">ثقافة</span></span>
+    </div>
+    <div class="assoc-card reveal">
+      <div class="assoc-num">04</div>
+      <div class="assoc-dot"></div>
+      <div class="assoc-name"><span class="lf">Association des femmes</span><span class="la">جمعية المرأة</span></div>
+      <p class="assoc-desc"><span class="lf">Valorisation de l'artisanat féminin (tissage, tapis) et soutien à l'autonomisation des femmes du douar. <em>(à personnaliser)</em></span><span class="la">تثمين الصناعة التقليدية النسائية (النسيج، الزرابي) ودعم تمكين نساء الدوار. <em>(للتخصيص)</em></span></p>
+      <span class="assoc-tag"><span class="lf">SOLIDARITÉ</span><span class="la">تضامن</span></span>
+    </div>
+  </div>
+</section>
+
+<section id="entreprises">
+  <p class="section-label reveal"><span class="lf">Économie & entreprises</span><span class="la">الاقتصاد و المقاولات</span></p>
+  <h2 class="section-title reveal"><span class="lf">Activités & savoir-faire</span><span class="la">الأنشطة و المهارات</span></h2>
+  <p class="section-intro reveal"><span class="lf">Les activités et entreprises qui font vivre le territoire, entre tradition montagnarde et savoir-faire modernes.</span><span class="la">الأنشطة والمقاولات التي تُحيي المجال، بين التقليد الجبلي والمهارات الحديثة.</span></p>
+
+  <!-- Entreprise vedette : Multitech El Idrissi -->
+  <div class="ent-feature reveal">
+    <div class="ent-feature-logo">
+      <img src="../images/log_multitech.jpeg" alt="Multitech El Idrissi — logo" loading="lazy" />
+    </div>
+    <div class="ent-feature-body">
+      <span class="ent-feature-badge"><span class="lf">Entreprise du territoire</span><span class="la">مقاولة المنطقة</span></span>
+      <h3 class="ent-feature-name">Multitech El Idrissi</h3>
+      <p class="ent-feature-sector"><span class="lf">Sécurité électronique · Réseaux · Télécommunications</span><span class="la">الأمن الإلكتروني · الشبكات · الاتصالات</span></p>
+      <p class="ent-feature-desc"><span class="lf">Spécialiste de la sécurité électronique et des solutions connectées : installation et maintenance de vidéosurveillance, contrôle d'accès, réseaux et systèmes d'alarme. Plus de 5 ans d'expérience et un support technique 24/7.</span><span class="la">متخصصة في الأمن الإلكتروني والحلول المتصلة: تركيب وصيانة أنظمة المراقبة بالكاميرات ومراقبة الولوج والشبكات وأنظمة الإنذار. أزيد من 5 سنوات خبرة ودعم تقني على مدار الساعة.</span></p>
+      <div class="ent-feature-tags">
+        <span><span class="lf">Vidéosurveillance HD</span><span class="la">المراقبة بالكاميرات</span></span>
+        <span><span class="lf">Contrôle d'accès & pointeuse</span><span class="la">مراقبة الولوج و التوقيت</span></span>
+        <span><span class="lf">Automatisme des portes</span><span class="la">أتمتة الأبواب</span></span>
+        <span><span class="lf">Réseaux & télécom</span><span class="la">الشبكات و الاتصالات</span></span>
+        <span><span class="lf">Alarme anti-intrusion</span><span class="la">أنظمة الإنذار</span></span>
+        <span><span class="lf">Détection incendie</span><span class="la">كشف الحرائق</span></span>
+      </div>
+      <div class="ent-feature-meta">
+        <span>📞 0661 488 276 · 0661 966 744</span>
+        <span>✉️ contact@mutech.ma</span>
+      </div>
+      <a class="ent-feature-btn" href="https://www.multitechelidrissi.com/" target="_blank" rel="noopener">
+        <span class="lf">Visiter le site →</span><span class="la">← زيارة الموقع</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="ent-grid">
+    <div class="ent-card reveal">
+      <div class="ent-sector"><span class="lf">Élevage</span><span class="la">تربية المواشي</span></div>
+      <div class="ent-name"><span class="lf">Éleveurs & bergers</span><span class="la">المربّون و الرعاة</span></div>
+      <p class="ent-desc"><span class="lf">Élevage ovin et caprin, pilier historique de l'économie du douar, rythmé par la transhumance d'été.</span><span class="la">تربية الأغنام والماعز، الركيزة التاريخية لاقتصاد الدوار، على إيقاع الترحال الصيفي.</span></p>
+    </div>
+    <div class="ent-card reveal">
+      <div class="ent-sector"><span class="lf">Apiculture</span><span class="la">تربية النحل</span></div>
+      <div class="ent-name"><span class="lf">Miel de montagne</span><span class="la">عسل الجبل</span></div>
+      <p class="ent-desc"><span class="lf">Le miel des hauteurs du Moyen Atlas, produit de qualité issu d'une flore d'altitude préservée.</span><span class="la">عسل أعالي الأطلس المتوسط، منتوج عالي الجودة من نباتات جبلية محفوظة.</span></p>
+    </div>
+    <div class="ent-card reveal">
+      <div class="ent-sector"><span class="lf">Artisanat</span><span class="la">الصناعة التقليدية</span></div>
+      <div class="ent-name"><span class="lf">Tissage & artisanat</span><span class="la">النسيج و الحرف</span></div>
+      <p class="ent-desc"><span class="lf">Tapis et tissages berbères aux motifs traditionnels, savoir-faire perpétué par les femmes du village.</span><span class="la">زرابي ومنسوجات أمازيغية بزخارف تقليدية، مهارة تحافظ عليها نساء القرية.</span></p>
+    </div>
+    <div class="ent-card reveal">
+      <div class="ent-sector"><span class="lf">Tourisme</span><span class="la">السياحة</span></div>
+      <div class="ent-name"><span class="lf">Tourisme de montagne</span><span class="la">سياحة جبلية</span></div>
+      <p class="ent-desc"><span class="lf">Randonnée, neige et paysages du Tichoukt : un potentiel d'écotourisme porté par le géoparc.</span><span class="la">المشي والثلوج ومناظر تيشوكت: إمكانات سياحة بيئية يدعمها الجيوبارك.</span></p>
+    </div>
+    <div class="ent-card reveal">
+      <div class="ent-sector"><span class="lf">Agriculture</span><span class="la">الفلاحة</span></div>
+      <div class="ent-name"><span class="lf">Cultures d'altitude</span><span class="la">الزراعة الجبلية</span></div>
+      <p class="ent-desc"><span class="lf">Petites cultures vivrières adaptées à la courte saison de montagne, complément essentiel de l'élevage.</span><span class="la">زراعات معيشية صغيرة متأقلمة مع الموسم الجبلي القصير، مكمّل أساسي لتربية الماشية.</span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img class="footer-logo" src="../images/logOumjniba.png" alt="Oumjniba — Tradition & Essence" loading="lazy" />
+  <span class="lf">© 2026 <span>Oumjniba — أم جنيبة</span> · Douar de la commune rurale d'El Mers · Province de Boulemane · Région Fès-Meknès · Maroc 🇲🇦</span>
+  <span class="la">© 2026 <span>أم جنيبة — Oumjniba</span> · دوار تابع للجماعة القروية المرس · إقليم بولمان · جهة فاس مكناس · المغرب 🇲🇦</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+  // ---- Carte interactive (OpenStreetMap, sans clé API) ----
+  // Coordonnées exactes d'Oumjniba / Oum Jeniba (GeoNames 2538807)
+  // Commune El Mers, province de Boulemane · altitude 1 931 m
+  var villageLat = 33.32741;
+  var villageLng = -4.68532;
+  try {
+    var map = L.map('map').setView([villageLat, villageLng], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+    L.marker([villageLat, villageLng]).addTo(map)
+      .bindPopup('<b>Oumjniba — أم جنيبة</b><br/>Commune El Mers, Province de Boulemane<br/>33°19′39″ N, 4°41′07″ O · alt. 1 931 m')
+      .openPopup();
+  } catch (e) {
+    document.getElementById('map').innerHTML =
+      '<div style="padding:40px;color:#8bbf6a;">Carte indisponible hors connexion.</div>';
+  }
+
+  // ---- Révélation au défilement ----
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target);} });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // ---- Bascule de langue FR / AR (avec mémorisation) ----
+  (function(){
+    var btn = document.getElementById('langToggle');
+    function apply(lang){
+      var ar = (lang === 'ar');
+      document.body.classList.toggle('ar', ar);
+      document.documentElement.lang = ar ? 'ar' : 'fr';
+      document.documentElement.dir  = ar ? 'rtl' : 'ltr';
+      try { localStorage.setItem('oj-lang', lang); } catch(e){}
+    }
+    var saved = 'fr';
+    try { saved = localStorage.getItem('oj-lang') || 'fr'; } catch(e){}
+    apply(saved);
+    btn.addEventListener('click', function(){
+      apply(document.body.classList.contains('ar') ? 'fr' : 'ar');
+    });
+  })();
+</script>
+
+</body>
+</html>
