@@ -1,43 +1,76 @@
-// Oumjniba - Shared Scripts
+// Oumjniba - Premium Redesign Scripts
 
-// 1. Navbar Scroll Effect
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('navbar');
-  if (nav) {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-});
-
-// 2. Mobile Burger Menu
-const burger = document.getElementById('navBurger');
-const navDesktop = document.querySelector('.navbar__nav-desktop');
-if (burger && navDesktop) {
-  burger.addEventListener('click', () => {
-    navDesktop.style.display = navDesktop.style.display === 'flex' ? 'none' : 'flex';
-    navDesktop.style.position = 'absolute';
-    navDesktop.style.top = '70px';
-    navDesktop.style.left = '0';
-    navDesktop.style.right = '0';
-    navDesktop.style.background = 'var(--clr-accent)';
-    navDesktop.style.flexDirection = 'column';
-    navDesktop.style.padding = '20px';
-  });
-}
-
-// 3. Reveal Animations
 document.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver((entries) => {
+
+  // 1. Navbar Scroll Effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // 2. Language Picker Dropdown
+  const langBtn = document.querySelector('.lang-picker__btn');
+  const langDropdown = document.querySelector('.lang-picker__dropdown');
+  
+  if (langBtn && langDropdown) {
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) {
+        langDropdown.classList.remove('open');
+      }
+    });
+  }
+
+  // 3. Mobile Burger Menu
+  const burgerMenu = document.getElementById('burgerMenu');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (burgerMenu && mobileMenu) {
+    burgerMenu.addEventListener('click', () => {
+      burgerMenu.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+  }
+
+  // 4. Reveal Animations (Intersection Observer)
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  const revealOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('active');
+        entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, revealOptions);
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  revealElements.forEach(el => {
+    revealObserver.observe(el);
+  });
+
+  // 5. Hero Slideshow
+  const slides = document.querySelectorAll('.hero__slide');
+  if (slides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 6000); // Change l'image toutes les 6 secondes
+  }
+
 });
