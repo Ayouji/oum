@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar" id="navbar">
   <div class="container">
     <div class="navbar__inner">
@@ -16,94 +17,251 @@
         <img src="../images/logOumjniba.png" alt="شعار أم جنيبة" />
         <span>أم جنيبة</span>
       </a>
-      <nav class="navbar__nav-desktop">
-        <a href="index.html" class="navbar__link active">الرئيسية</a>
-        <a href="village.html" class="navbar__link">القرية</a>
-        <a href="economie.html" class="navbar__link">الاقتصاد</a>
-        <a href="contact.html" class="navbar__link">اتصال</a>
+
+      <nav class="navbar__nav">
+        <a href="index.html" class="nav-link active">الرئيسية</a>
+        <a href="village.html" class="nav-link">القرية</a>
+        <a href="economie.html" class="nav-link">الاقتصاد</a>
+        <a href="contact.html" class="nav-link">اتصل بنا</a>
       </nav>
-      <div class="navbar__actions">
-        <div class="lang-selector">
-          <button class="lang-btn"><i class="ph ph-globe"></i> AR <i class="ph ph-caret-down"></i></button>
-          <div class="lang-dropdown">
-            <a href="../index.html">Français</a>
-            <a href="index.html">العربية</a>
-            <a href="../en/index.html">English</a>
-            <a href="../tamazight/index.html">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+
+      <div class="navbar__right">
+        <div class="lang-picker" id="langPicker">
+          <button class="lang-picker__btn">
+            <i class="ph ph-globe"></i> AR <i class="ph ph-caret-down"></i>
+          </button>
+          <div class="lang-picker__dropdown">
+            <a href="../index.html" class="lang-picker__item">Français</a>
+            <a href="index.html" class="lang-picker__item active">العربية</a>
+            <a href="../en/index.html" class="lang-picker__item">English</a>
+            <a href="../tamazight/index.html" class="lang-picker__item">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
           </div>
         </div>
-        <button class="navbar__burger" id="navBurger"><span></span><span></span><span></span></button>
+        <div class="burger" id="burgerMenu">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </div>
   </div>
 </header>
 
-<section class="hero" id="hero">
-  <div class="hero__bg-wrap">
-    <img src="../images/oum_jniba.jpeg" alt="منظر تيشوكت" class="hero__bg-img" />
-    <div class="hero__overlay"></div>
-  </div>
-  <div class="container">
-    <div class="hero__content-centered">
-      <span class="hero__eyebrow-pill reveal reveal-d1"><i class="ph ph-map-pin"></i> الأطلس المتوسط · المغرب</span>
-      <h1 class="hero__title-large reveal reveal-d2">في سفح <span class="text-gradient">تيشوكت</span>، ترتقي الحياة.</h1>
-      <p class="hero__desc-large reveal reveal-d3">دوار جبلي استثنائي بإقليم بولمان. يُعرف بعزلته الشتوية وروابطه المجتمعية القوية.</p>
-      <div class="hero__btns reveal reveal-d3">
-        <a href="village.html" class="btn btn-primary">اكتشف القرية <i class="ph ph-arrow-left"></i></a>
-        <a href="contact.html" class="btn btn-white-outline">موقعنا <i class="ph ph-map-trifold"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stats-bar">
-  <div class="container">
-    <div class="stats-bar__grid">
-      <div class="stat-item reveal">
-        <div class="stat-item__number">1 931<span class="stat-item__small">m</span></div>
-        <div class="stat-item__label">الارتفاع</div>
-      </div>
-      <div class="stat-item reveal reveal-d1">
-        <div class="stat-item__number">2 796<span class="stat-item__small">m</span></div>
-        <div class="stat-item__label">قمة تيشوكت</div>
-      </div>
-      <div class="stat-item reveal reveal-d2">
-        <div class="stat-item__number">110<span class="stat-item__small">km</span></div>
-        <div class="stat-item__label">عن فاس</div>
-      </div>
-      <div class="stat-item reveal reveal-d3">
-        <div class="stat-item__number">03<span class="stat-item__small">أشهر</span></div>
-        <div class="stat-item__label">شتوية تحت الثلج</div>
-      </div>
-    </div>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-menu__nav">
+    <a href="index.html" class="mobile-menu__link active">الرئيسية</a>
+    <a href="village.html" class="mobile-menu__link">القرية</a>
+    <a href="economie.html" class="mobile-menu__link">الاقتصاد</a>
+    <a href="contact.html" class="mobile-menu__link">اتصل بنا</a>
+  </nav>
+  <div class="mobile-menu__langs">
+    <a href="../index.html">FR</a>
+    <a href="index.html" style="color:var(--c-gold)">AR</a>
+    <a href="../en/index.html">EN</a>
+    <a href="../tamazight/index.html">TAM</a>
   </div>
 </div>
 
-<section class="bento-section">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__media">
+    <div class="hero__slideshow">
+      <div class="hero__slide active" style="background-image: url('../images/oum_jniba.jpeg')"></div>
+      <div class="hero__slide" style="background-image: url('https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&q=80&w=2000')"></div>
+      <div class="hero__slide" style="background-image: url('../images/log_multitech.jpeg')"></div>
+      <div class="hero__slide" style="background-image: url('../images/logOumjniba.png')"></div>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__vignette"></div>
+  </div>
   <div class="container">
-    <div class="bento-grid" style="margin-top:60px;">
-      <div class="bento-card bento-card--large reveal reveal-d1" style="display:flex;flex-direction:column;justify-content:center;padding:60px;">
-        <h3 style="font-size:2.5rem;margin-bottom:20px;">مرحباً بكم في أم جنيبة</h3>
-        <p style="font-size:1.2rem;line-height:2;">أم جنيبة ليست مجرد قرية. إنها مجال صاغ شخصية سكانها، بين عزلة قاسية وتضامن لا يتزعزع. اكتشف تراثنا.</p>
-        <a href="village.html" class="btn btn-white-solid" style="align-self:flex-start;margin-top:30px;">اكتشف التاريخ <i class="ph ph-arrow-left"></i></a>
+    <div class="hero__content">
+      <div class="hero__tag reveal">
+        <i class="ph ph-map-pin"></i> الأطلس المتوسط، المغرب
       </div>
-      <div class="bento-card reveal reveal-d2" style="background:url('../images/oum_jniba.jpeg') center/cover;position:relative;">
-        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);border-radius:20px;"></div>
-        <div style="position:relative;z-index:2;color:#fff;height:100%;display:flex;flex-direction:column;justify-content:flex-end;">
-          <h3 style="color:#fff;">الاقتصاد المحلي</h3>
-          <a href="economie.html" style="color:var(--clr-brand-gold);font-weight:bold;margin-top:10px;display:flex;align-items:center;gap:8px;flex-direction:row-reverse;">المزيد <i class="ph ph-arrow-left"></i></a>
-        </div>
+      <h1 class="hero__title reveal reveal-d1">
+        روح <br><em>تيشوكت</em>.
+      </h1>
+      <p class="hero__desc reveal reveal-d2">
+        تقع قرية أم جنيبة على ارتفاع يقارب 2000 متر، حيث تصنع قسوة الشتاء تضامن سكانها. تراث أمازيغي حي.
+      </p>
+      <div class="hero__actions reveal reveal-d3">
+        <a href="village.html" class="btn btn--primary">اكتشف التاريخ <i class="ph ph-arrow-left"></i></a>
+        <a href="contact.html" class="btn btn--outline-white">موقعنا</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll">
+    اكتشف
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats__grid">
+      <div class="stat-card reveal">
+        <i class="ph ph-mountains stat-card__icon"></i>
+        <div class="stat-card__value">1,931<small>م</small></div>
+        <div class="stat-card__label">الارتفاع</div>
+      </div>
+      <div class="stat-card reveal reveal-d1">
+        <i class="ph ph-snowflake stat-card__icon"></i>
+        <div class="stat-card__value">03<small>أشهر</small></div>
+        <div class="stat-card__label">تحت الثلج</div>
+      </div>
+      <div class="stat-card reveal reveal-d2">
+        <i class="ph ph-house-line stat-card__icon"></i>
+        <div class="stat-card__value">100<small>+</small></div>
+        <div class="stat-card__label">منزل</div>
+      </div>
+      <div class="stat-card reveal reveal-d3">
+        <i class="ph ph-clock-counter-clockwise stat-card__icon"></i>
+        <div class="stat-card__value">100<small>عام+</small></div>
+        <div class="stat-card__label">من التاريخ</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__media reveal">
+        <div class="about__img-wrap">
+          <img src="../images/oum_jniba.jpeg" alt="منظر القرية" />
+          <div class="about__badge">
+            <i class="ph ph-tree-evergreen"></i>
+            <div>
+              <strong>جماعة المرس</strong>
+              <span>إقليم بولمان</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about__body reveal reveal-d1">
+        <span class="eyebrow">مرحباً بكم</span>
+        <h2>أرض ذات طابع أصيل.</h2>
+        <p class="lead">أم جنيبة ليست مجرد قرية. إنها مكان صقل شخصية الناس بقدر ما صاغوه.</p>
+        <p>معزولة خلال أشهر الشتاء الطويلة، تحافظ هذه القرية في الأطلس المتوسط على نمط حياة أصيل، يتخلله تعاقب الفصول، الرعي، والتقاليد الأمازيغية العريقة لقبيلة آيت سغروشن.</p>
+        <ul class="about__list">
+          <li><i class="ph ph-check-circle"></i> مناخ جبلي قاسٍ</li>
+          <li><i class="ph ph-check-circle"></i> روح التضامن (التويزة)</li>
+          <li><i class="ph ph-check-circle"></i> اقتصاد محلي مرن</li>
+        </ul>
+        <a href="village.html" class="btn btn--outline" style="margin-top:var(--s-4)">اكتشف المزيد عن القرية</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOVER -->
+<section class="discover">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">الدينامية المحلية</span>
+      <h2>العيش في أم جنيبة</h2>
+      <p>بين التراث العريق والمبادرات الحديثة، تتطور القرية بفضل مشاركة سكانها وأبنائها في المهجر.</p>
+    </div>
+    
+    <div class="discover__grid">
+      <a href="economie.html" class="disc-card disc-card--photo reveal">
+        <img src="../images/oum_jniba.jpeg" alt="منظر طبيعي" />
+        <div class="disc-card__overlay"></div>
+        <div class="disc-card__body">
+          <div class="disc-card__cat">الاقتصاد والتعاونيات</div>
+          <h3>القوى الحية في القرية</h3>
+          <p>من الزراعة الجبلية إلى شركات التكنولوجيا التي أسسها أبناء القرية، اكتشف النسيج الاقتصادي.</p>
+          <span class="disc-card__link">تعرف على الفاعلين المحليين <i class="ph ph-arrow-left"></i></span>
+        </div>
+      </a>
+      
+      <div class="discover__col">
+        <a href="village.html" class="disc-card disc-card--dark reveal reveal-d1">
+          <div class="disc-card__body">
+            <div class="disc-card__icon"><i class="ph ph-books"></i></div>
+            <div class="disc-card__cat">التعليم</div>
+            <h3>مدرسة أم جنيبة</h3>
+            <p>عماد المعرفة لأجيال المستقبل في القرية.</p>
+            <span class="disc-card__link disc-card__link--light">اقرأ المزيد <i class="ph ph-arrow-left"></i></span>
+          </div>
+        </a>
+        
+        <a href="economie.html" class="disc-card disc-card--gold reveal reveal-d2">
+          <div class="disc-card__body">
+            <div class="disc-card__icon"><i class="ph ph-users-three"></i></div>
+            <div class="disc-card__cat">المجتمع المدني</div>
+            <h3>النسيج الجمعوي</h3>
+            <p>التضامن، الوصول إلى المياه، تنمية المرأة: الجمعيات في قلب الحدث.</p>
+            <span class="disc-card__link disc-card__link--light">اكتشف <i class="ph ph-arrow-left"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BANNER -->
+<section class="quote-banner">
+  <div class="quote-banner__bg">
+    <img src="../images/oum_jniba.jpeg" alt="Texture" />
+  </div>
+  <div class="quote-banner__overlay"></div>
+  <div class="container">
+    <div class="quote-banner__content reveal">
+      <div class="quote-banner__mark">"</div>
+      <div class="quote-banner__text">الفم المغلق لا تدخله الذباب. حكمة أمازيغية من جبال تيشوكت.</div>
+      <div class="quote-banner__author">— مثل محلي</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <img src="../images/logOumjniba.png" alt="Oumjniba Logo" />
-    <p>© 2026 <strong>أم جنيبة</strong>. إقليم بولمان، المغرب.</p>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="../images/logOumjniba.png" alt="شعار أم جنيبة" class="footer__logo" />
+        <p>البوابة الرسمية لقرية أم جنيبة. جسر يربط بين السكان، المهجر، ومحبي الأطلس المتوسط.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph ph-youtube-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>تصفح</h4>
+        <ul>
+          <li><i class="ph ph-caret-left"></i> <a href="index.html">الرئيسية</a></li>
+          <li><i class="ph ph-caret-left"></i> <a href="village.html">تاريخ القرية</a></li>
+          <li><i class="ph ph-caret-left"></i> <a href="economie.html">الاقتصاد المحلي</a></li>
+          <li><i class="ph ph-caret-left"></i> <a href="contact.html">الاتصال والموقع</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>الجماعة</h4>
+        <ul>
+          <li><i class="ph ph-caret-left"></i> <span>الجماعة القروية المرس</span></li>
+          <li><i class="ph ph-caret-left"></i> <span>إقليم بولمان</span></li>
+          <li><i class="ph ph-caret-left"></i> <span>جهة فاس مكناس</span></li>
+          <li><i class="ph ph-caret-left"></i> <span>المغرب</span></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>موقعنا</h4>
+        <ul>
+          <li><i class="ph ph-map-pin"></i> <span>إحداثيات جغرافية:<br>33°19′39″ ش، 4°41′07″ غ</span></li>
+          <li><i class="ph ph-envelope"></i> <span>الرمز البريدي: 33102</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      &copy; 2026 <strong>أم جنيبة</strong>. جميع الحقوق محفوظة.
+    </div>
   </div>
 </footer>
+
 <script src="../script.js"></script>
 </body>
 </html>

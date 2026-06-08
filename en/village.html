@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar" id="navbar">
   <div class="container">
     <div class="navbar__inner">
@@ -16,96 +17,124 @@
         <img src="../images/logOumjniba.png" alt="Oumjniba Logo" />
         <span>Oumjniba</span>
       </a>
-      <nav class="navbar__nav-desktop">
-        <a href="index.html" class="navbar__link">Home</a>
-        <a href="village.html" class="navbar__link active">The Village</a>
-        <a href="economie.html" class="navbar__link">Economy</a>
-        <a href="contact.html" class="navbar__link">Contact</a>
+
+      <nav class="navbar__nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="village.html" class="nav-link active">The Village</a>
+        <a href="economie.html" class="nav-link">Economy</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
-      <div class="navbar__actions">
-        <div class="lang-selector">
-          <button class="lang-btn"><i class="ph ph-globe"></i> EN <i class="ph ph-caret-down"></i></button>
-          <div class="lang-dropdown">
-            <a href="../village.html">Français</a>
-            <a href="../ar/village.html">العربية</a>
-            <a href="village.html">English</a>
-            <a href="../tamazight/village.html">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+
+      <div class="navbar__right">
+        <div class="lang-picker" id="langPicker">
+          <button class="lang-picker__btn">
+            <i class="ph ph-globe"></i> EN <i class="ph ph-caret-down"></i>
+          </button>
+          <div class="lang-picker__dropdown">
+            <a href="../village.html" class="lang-picker__item">Français</a>
+            <a href="../ar/village.html" class="lang-picker__item">العربية</a>
+            <a href="village.html" class="lang-picker__item active">English</a>
+            <a href="../tamazight/village.html" class="lang-picker__item">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
           </div>
         </div>
-        <button class="navbar__burger" id="navBurger"><span></span><span></span><span></span></button>
+        <div class="burger" id="burgerMenu">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </div>
   </div>
 </header>
 
-<div class="page-header">
-  <div class="container">
-    <span class="eyebrow reveal"><i class="ph ph-tree"></i> Memory & Territory</span>
-    <h1 class="reveal reveal-d1">The Village of Oumjniba</h1>
-    <p class="reveal reveal-d2" style="max-width:600px;margin:20px auto 0;font-size:1.2rem;opacity:0.8;">Discover what makes this village a unique place — its history and infrastructure.</p>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-menu__nav">
+    <a href="index.html" class="mobile-menu__link">Home</a>
+    <a href="village.html" class="mobile-menu__link active">The Village</a>
+    <a href="economie.html" class="mobile-menu__link">Economy</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+  </nav>
+  <div class="mobile-menu__langs">
+    <a href="../village.html">FR</a>
+    <a href="../ar/village.html">AR</a>
+    <a href="village.html" style="color:var(--c-gold)">EN</a>
+    <a href="../tamazight/village.html">TAM</a>
   </div>
 </div>
 
-<section class="bento-section">
+<!-- PAGE HEADER -->
+<div class="page-header">
   <div class="container">
-    <div class="section-intro reveal">
+    <span class="eyebrow eyebrow--light reveal"><i class="ph ph-tree"></i> Memory & Territory</span>
+    <h1 class="reveal reveal-d1">The Village of Oumjniba</h1>
+    <p class="reveal reveal-d2">Discover the history of this unique village, its mountain climate, its traditions, and its key infrastructures.</p>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="container">
+    <div class="section-head reveal">
       <span class="eyebrow">Identity</span>
-      <h2>A land sculpted by altitude</h2>
-      <p>At 1,931 meters of altitude, Oumjniba is an exceptional territory that has forged a unique cultural and human identity.</p>
+      <h2>The essence of Oumjniba</h2>
     </div>
-    <div class="bento-grid">
-      <div class="bento-card reveal reveal-d1">
-        <div class="bento-icon"><i class="ph ph-snowflake"></i></div>
-        <h3>Harsh Climate</h3>
-        <p>One of the coldest climates in Africa, often cutting the village off from the outside world for entire weeks during winter.</p>
+    
+    <div class="pillars__grid">
+      <div class="pillar reveal">
+        <div class="pillar__num">01</div>
+        <div class="pillar__icon"><i class="ph ph-snowflake"></i></div>
+        <h3>Harsh climate</h3>
+        <p>One of the coldest climates in Africa. Long winters and heavy snows forge the resilient character of the local population.</p>
       </div>
-      <div class="bento-card reveal reveal-d2">
-        <div class="bento-icon"><i class="ph ph-horse"></i></div>
-        <h3>Pastoral Expertise</h3>
-        <p>Sheep farming and transhumance have structured the local economy for centuries, passed down through generations.</p>
+      <div class="pillar reveal reveal-d1">
+        <div class="pillar__num">02</div>
+        <div class="pillar__icon"><i class="ph ph-horse"></i></div>
+        <h3>Pastoral knowledge</h3>
+        <p>Sheep farming and transhumance have structured the local economy for centuries, proudly passed down from generation to generation.</p>
       </div>
-      <div class="bento-card reveal reveal-d3">
-        <div class="bento-icon"><i class="ph ph-star-four"></i></div>
+      <div class="pillar reveal reveal-d2">
+        <div class="pillar__num">03</div>
+        <div class="pillar__icon"><i class="ph ph-star-four"></i></div>
         <h3>Amazigh Heritage</h3>
-        <p>The Tamazight language, proverbs and oral traditions form an exceptional living heritage, nationally recognized.</p>
+        <p>The Tamazight language, proverbs, and oral traditions form an exceptional living heritage that unites all the families of the village.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- HISTORY TIMELINE -->
 <section class="process-section">
   <div class="container">
     <div class="process__grid">
       <div>
         <span class="eyebrow">Our History</span>
-        <h2 class="reveal">Oumjniba Timeline</h2>
+        <h2 class="reveal">Chronology</h2>
         <div class="process__steps">
           <div class="process-step reveal">
             <div class="process-step__num">1</div>
             <div class="process-step__text">
-              <h4>Land of the Aït Seghrouchen</h4>
-              <p>The heights of Tichoukt have been the territory of Amazigh tribes living off livestock for centuries.</p>
+              <h4>The land of the Aït Seghrouchen</h4>
+              <p>The heights of Tichoukt are the historical territory of Amazigh tribes living from pastoral farming.</p>
             </div>
           </div>
           <div class="process-step reveal reveal-d1">
             <div class="process-step__num">2</div>
             <div class="process-step__text">
-              <h4>Transhumance & the Joua Valleys</h4>
-              <p>The Joua depression served as a refuge and transhumance corridor for seasonal herds.</p>
+              <h4>Transhumance & Joua valleys</h4>
+              <p>The Joua depression has long served as a winter refuge and a transhumance corridor for herds.</p>
             </div>
           </div>
           <div class="process-step reveal reveal-d2">
             <div class="process-step__num">3</div>
             <div class="process-step__text">
-              <h4>A Bastion of Autonomy</h4>
-              <p>Difficult to access, these communities long preserved their independence and ancestral ways of life.</p>
+              <h4>A bastion of autonomy</h4>
+              <p>Protected by the mountains, these communities have long preserved their independence and local customs.</p>
             </div>
           </div>
           <div class="process-step reveal reveal-d3">
             <div class="process-step__num">4</div>
             <div class="process-step__text">
-              <h4>Contemporary Development</h4>
-              <p>Electrification and clean water access opened Oumjniba to the modern world without erasing its identity.</p>
+              <h4>Modern development</h4>
+              <p>The arrival of electricity, drinking water, and road improvements are gradually opening up the village.</p>
             </div>
           </div>
         </div>
@@ -113,51 +142,92 @@
       <div class="reveal reveal-d1">
         <div class="process__visual">
           <img src="../images/oum_jniba.jpeg" alt="Village view" />
-          <p class="process__visual-quote">"Into a closed mouth, flies do not enter." — Amazigh Proverb.</p>
+          <p class="process__visual-quote">"In a closed mouth, flies do not enter." — Amazigh proverb.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- INFRASTRUCTURES -->
 <section class="services-section">
   <div class="container">
-    <div class="section-intro reveal">
-      <span class="eyebrow">Infrastructure</span>
-      <h2>Serving the inhabitants</h2>
-      <p>Oumjniba has progressively developed its facilities to improve the quality of life for its residents.</p>
+    <div class="section-head reveal">
+      <span class="eyebrow">Infrastructures</span>
+      <h2>Vital services</h2>
+      <p>Oumjniba has gradually developed its facilities to improve the quality of life of its residents, despite geographical challenges.</p>
     </div>
+    
     <div class="services__grid">
       <div class="service-card reveal">
         <div class="service-card__icon"><i class="ph ph-student"></i></div>
-        <h3>Oumjniba School</h3>
-        <p>The village school welcomes children from the douar and surrounding hamlets. El Mers Commune, Boulemane Province.</p>
+        <h3>Primary School</h3>
+        <p>The village school welcomes the children of the village, ensuring basic education without having to travel dozens of kilometers.</p>
       </div>
       <div class="service-card reveal reveal-d1">
         <div class="service-card__icon"><i class="ph ph-mosque"></i></div>
-        <h3>Mosque</h3>
-        <p>Place of worship and central landmark of the spiritual and social life of the village since its founding.</p>
+        <h3>Central Mosque</h3>
+        <p>A place of worship but also a central landmark of the spiritual and social life of the village since its foundation.</p>
       </div>
       <div class="service-card reveal reveal-d2">
         <div class="service-card__icon"><i class="ph ph-drop"></i></div>
-        <h3>Water & Electricity</h3>
-        <p>The recent connection to national networks has radically transformed the daily life of this isolated village.</p>
+        <h3>Water Network</h3>
+        <p>The connection and local management of drinking water have radically transformed daily life, especially for women.</p>
       </div>
       <div class="service-card reveal reveal-d3">
         <div class="service-card__icon"><i class="ph ph-road-horizon"></i></div>
-        <h3>Mountain Roads</h3>
-        <p>Tracks connecting the douar to Boulemane, sometimes blocked by snow and frost during the winter months.</p>
+        <h3>Mountain roads</h3>
+        <p>Motorable tracks connect the village to Boulemane, requiring constant snow clearing during the winter season.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <img src="../images/logOumjniba.png" alt="Oumjniba Logo" />
-    <p>© 2026 <strong>Oumjniba</strong>. Boulemane Province, Morocco.</p>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="../images/logOumjniba.png" alt="Oumjniba Logo" class="footer__logo" />
+        <p>The official portal of the Oumjniba village. A bridge between the inhabitants, the diaspora, and lovers of the Middle Atlas.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph ph-youtube-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <a href="index.html">Home</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="village.html">Village History</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="economie.html">Local Economy</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="contact.html">Contact & Location</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Commune</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <span>Rural Commune of El Mers</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Boulemane Province</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Fez-Meknes Region</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Morocco</span></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Find us</h4>
+        <ul>
+          <li><i class="ph ph-map-pin"></i> <span>GPS Coordinates:<br>33°19′39″ N, 4°41′07″ W</span></li>
+          <li><i class="ph ph-envelope"></i> <span>Zip: 33102</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      &copy; 2026 <strong>Oumjniba</strong>. All rights reserved.
+    </div>
   </div>
 </footer>
+
 <script src="../script.js"></script>
 </body>
 </html>

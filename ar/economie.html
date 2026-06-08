@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar" id="navbar">
   <div class="container">
     <div class="navbar__inner">
@@ -16,48 +17,72 @@
         <img src="../images/logOumjniba.png" alt="شعار أم جنيبة" />
         <span>أم جنيبة</span>
       </a>
-      <nav class="navbar__nav-desktop">
-        <a href="index.html" class="navbar__link">الرئيسية</a>
-        <a href="village.html" class="navbar__link">القرية</a>
-        <a href="economie.html" class="navbar__link active">الاقتصاد</a>
-        <a href="contact.html" class="navbar__link">اتصال</a>
+
+      <nav class="navbar__nav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="village.html" class="nav-link">القرية</a>
+        <a href="economie.html" class="nav-link active">الاقتصاد</a>
+        <a href="contact.html" class="nav-link">اتصل بنا</a>
       </nav>
-      <div class="navbar__actions">
-        <div class="lang-selector">
-          <button class="lang-btn"><i class="ph ph-globe"></i> AR <i class="ph ph-caret-down"></i></button>
-          <div class="lang-dropdown">
-            <a href="../economie.html">Français</a>
-            <a href="economie.html">العربية</a>
-            <a href="../en/economie.html">English</a>
-            <a href="../tamazight/economie.html">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+
+      <div class="navbar__right">
+        <div class="lang-picker" id="langPicker">
+          <button class="lang-picker__btn">
+            <i class="ph ph-globe"></i> AR <i class="ph ph-caret-down"></i>
+          </button>
+          <div class="lang-picker__dropdown">
+            <a href="../economie.html" class="lang-picker__item">Français</a>
+            <a href="economie.html" class="lang-picker__item active">العربية</a>
+            <a href="../en/economie.html" class="lang-picker__item">English</a>
+            <a href="../tamazight/economie.html" class="lang-picker__item">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
           </div>
         </div>
-        <button class="navbar__burger" id="navBurger"><span></span><span></span><span></span></button>
+        <div class="burger" id="burgerMenu">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </div>
   </div>
 </header>
 
-<div class="page-header">
-  <div class="container">
-    <span class="eyebrow reveal"><i class="ph ph-chart-line-up"></i> النسيج الاقتصادي</span>
-    <h1 class="reveal reveal-d1">الاقتصاد والجمعيات</h1>
-    <p class="reveal reveal-d2" style="max-width:600px;margin:20px auto 0;font-size:1.2rem;opacity:0.8;">الفاعلون الذين يُنشطون أم جنيبة: مقاولون، تعاونيات وجمعيات تضامنية.</p>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-menu__nav">
+    <a href="index.html" class="mobile-menu__link">الرئيسية</a>
+    <a href="village.html" class="mobile-menu__link">القرية</a>
+    <a href="economie.html" class="mobile-menu__link active">الاقتصاد</a>
+    <a href="contact.html" class="mobile-menu__link">اتصل بنا</a>
+  </nav>
+  <div class="mobile-menu__langs">
+    <a href="../economie.html">FR</a>
+    <a href="economie.html" style="color:var(--c-gold)">AR</a>
+    <a href="../en/economie.html">EN</a>
+    <a href="../tamazight/economie.html">TAM</a>
   </div>
 </div>
 
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="eyebrow eyebrow--light reveal"><i class="ph ph-chart-line-up"></i> النسيج الاقتصادي</span>
+    <h1 class="reveal reveal-d1">الاقتصاد والجمعيات</h1>
+    <p class="reveal reveal-d2">الفاعلون الذين ينشطون أم جنيبة: المقاولون، التعاونيات الفلاحية، والجمعيات التضامنية.</p>
+  </div>
+</div>
+
+<!-- ENTREPRISES & COOPERATIVES -->
 <section class="results-section">
   <div class="container">
-    <div class="section-intro reveal">
+    <div class="section-head reveal">
       <span class="eyebrow">دينامية محلية</span>
-      <h2>مقاولات وتعاونيات</h2>
-      <p>أبناء وبنات الدوار الذين يبنون ويثمّنون أرضهم من خلال مبادرات اقتصادية لافتة.</p>
+      <h2>الشركات والتعاونيات</h2>
+      <p>أبناء وبنات القرية الذين يبنون ويثمنون منطقتهم من خلال مبادرات اقتصادية متميزة.</p>
     </div>
 
     <div class="case-card reveal">
       <div class="case-card__header">
-        <div class="case-card__meta">
-          <div class="case-card__type"><i class="ph ph-shield-check"></i> مقاولة رائدة · تكنولوجيا</div>
+        <div>
+          <div class="case-card__type"><i class="ph ph-shield-check"></i> شركة رائدة · التكنولوجيا</div>
           <div class="case-card__name">Multitech El Idrissi</div>
         </div>
         <span class="case-card__flag"><i class="ph ph-map-pin"></i> الدار البيضاء والنواحي</span>
@@ -65,74 +90,114 @@
       <div class="case-card__metrics">
         <div>
           <span class="case-metric__label">المجال</span>
-          <div class="case-metric__values"><i class="ph ph-camera"></i> الأمن الإلكتروني والشبكات</div>
+          <div class="case-metric__values"><i class="ph ph-camera"></i> الأمن الإلكتروني</div>
         </div>
         <div>
           <span class="case-metric__label">اتصال مباشر</span>
           <div class="case-metric__values"><i class="ph ph-phone"></i> 0661 488 276</div>
         </div>
       </div>
-      <p class="case-card__desc">تأسست من طرف أحد أبناء الدوار، متخصصة في المراقبة بالكاميرات وأنظمة الإنذار والتحكم في الوصول. دعم تقني 24/7.</p>
-      <a href="https://www.multitechelidrissi.com/" target="_blank" class="btn btn-outline btn-sm" style="margin-top:20px;">زيارة الموقع الإلكتروني <i class="ph ph-arrow-square-out"></i></a>
+      <p class="case-card__desc">تأسست من طرف أحد أبناء القرية، وتتميز هذه الشركة في المراقبة بالكاميرات، التحكم في الولوج، وأنظمة الإنذار. الدعم التقني متوفر على مدار الساعة.</p>
+      <a href="https://www.multitechelidrissi.com/" target="_blank" class="btn btn--outline btn-sm" style="margin-top:var(--s-4);">زيارة الموقع الإلكتروني <i class="ph ph-arrow-left"></i></a>
     </div>
 
     <div class="case-card reveal reveal-d1">
       <div class="case-card__header">
-        <div class="case-card__meta">
-          <div class="case-card__type"><i class="ph ph-plant"></i> تعاونية محلية · فلاحة</div>
+        <div>
+          <div class="case-card__type"><i class="ph ph-plant"></i> تعاونية محلية · الفلاحة</div>
           <div class="case-card__name">زعفران أم جنيبة</div>
         </div>
-        <span class="case-card__flag"><i class="ph ph-medal"></i> منتوج مجالي</span>
+        <span class="case-card__flag"><i class="ph ph-medal"></i> منتج محلي</span>
       </div>
-      <p class="case-card__desc">إنتاج وتثمين زعفران أم جنيبة. المسيّر: حفيظ بوتمزكيدة. تعاونية تُبرز فلاحة المرتفعات في الأطلس المتوسط.</p>
+      <p class="case-card__desc">إنتاج وتثمين زعفران أم جنيبة. المسير: حفيظ بوتمزكيدة. تعاونية تبرز الفلاحة الجبلية في الأطلس المتوسط والذهب الأحمر المغربي.</p>
     </div>
 
     <div class="case-card reveal reveal-d2">
       <div class="case-card__header">
-        <div class="case-card__meta">
-          <div class="case-card__type"><i class="ph ph-needle-simple"></i> صناعة تقليدية</div>
+        <div>
+          <div class="case-card__type"><i class="ph ph-needle-simple"></i> الصناعة التقليدية</div>
           <div class="case-card__name">تعاونية تفرين تيشوكت</div>
         </div>
       </div>
-      <p class="case-card__desc">صناعة تقليدية: النسيج والقص والخياطة والتطريز. الرئيسة: فاطمة ايوجيل. موروث ثقافي حي تتوارثه الأمهات عن بناتهن.</p>
+      <p class="case-card__desc">الصناعة التقليدية: نسج الزرابي، الفصالة، الخياطة والطرز الرفيع. الرئيسة: فاطمة أيوجيل. خبرة لا تقدر بثمن، تتوارث من الأم إلى الابنة، وتحافظ على تراث حي.</p>
     </div>
 
-    <div class="section-intro reveal" style="margin-top:80px;">
+    <div class="section-head reveal" style="margin-top:var(--s-20);">
       <span class="eyebrow">الحياة الجمعوية</span>
-      <h2>الجمعيات النشطة</h2>
-      <p>المجتمع المدني بأم جنيبة منظّم ومنخرط في التنمية الاجتماعية والثقافية للدوار.</p>
+      <h2>جمعيات نشطة</h2>
+      <p>المجتمع المدني في أم جنيبة منظم بشكل ملحوظ وملتزم بالتنمية الاجتماعية والدينية والثقافية للقرية.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s-6);">
       <div class="case-card reveal" style="margin-bottom:0;">
         <div class="case-card__type"><i class="ph ph-drop"></i> خدمات حيوية</div>
         <div class="case-card__name" style="font-size:1.3rem;margin-top:8px;">جمعية أم جنيبة للماء</div>
-        <p class="case-card__desc" style="margin-top:8px;">تسيير وصيانة شبكة الماء الصالح للشرب بالقرية.</p>
+        <p class="case-card__desc" style="margin-top:8px;">إدارة صارمة، توزيع وصيانة يومية لشبكة الماء الصالح للشرب في القرية.</p>
       </div>
       <div class="case-card reveal reveal-d1" style="margin-bottom:0;">
-        <div class="case-card__type"><i class="ph ph-users-three"></i> تنمية اجتماعية</div>
+        <div class="case-card__type"><i class="ph ph-users-three"></i> التنمية الاجتماعية</div>
         <div class="case-card__name" style="font-size:1.3rem;margin-top:8px;">جمعية نساء تيشوكت</div>
-        <p class="case-card__desc" style="margin-top:8px;">تمكين المرأة عبر الصناعة التقليدية والتكوين المهني.</p>
+        <p class="case-card__desc" style="margin-top:8px;">تمكين نساء المنطقة من خلال الصناعة التقليدية، محو الأمية، والتكوين المستمر.</p>
       </div>
       <div class="case-card reveal reveal-d2" style="margin-bottom:0;">
-        <div class="case-card__type"><i class="ph ph-heart"></i> إدماج اجتماعي</div>
-        <div class="case-card__name" style="font-size:1.3rem;margin-top:8px;">جمعية السلام (إعاقة)</div>
-        <p class="case-card__desc" style="margin-top:8px;">دعم وإدماج الأشخاص في وضعية إعاقة.</p>
+        <div class="case-card__type"><i class="ph ph-heart"></i> الإدماج الاجتماعي</div>
+        <div class="case-card__name" style="font-size:1.3rem;margin-top:8px;">جمعية السلام (الإعاقة)</div>
+        <p class="case-card__desc" style="margin-top:8px;">الدعم والمواكبة والمساعدة في إدماج الأشخاص في وضعية إعاقة داخل المجتمع.</p>
       </div>
       <div class="case-card reveal reveal-d3" style="margin-bottom:0;">
-        <div class="case-card__type"><i class="ph ph-book-open"></i> ثقافة دينية</div>
+        <div class="case-card__type"><i class="ph ph-book-open"></i> الثقافة الدينية</div>
         <div class="case-card__name" style="font-size:1.3rem;margin-top:8px;">جمعية علوم القرآن</div>
-        <p class="case-card__desc" style="margin-top:8px;">تعليم ونشر العلوم القرآنية داخل المجتمع.</p>
+        <p class="case-card__desc" style="margin-top:8px;">تعليم وتحفيظ ونشر علوم القرآن بين الأجيال الصاعدة.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <img src="../images/logOumjniba.png" alt="Oumjniba Logo" />
-    <p>© 2026 <strong>أم جنيبة</strong>. إقليم بولمان، المغرب.</p>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="../images/logOumjniba.png" alt="شعار أم جنيبة" class="footer__logo" />
+        <p>البوابة الرسمية لقرية أم جنيبة. جسر يربط بين السكان، المهجر، ومحبي الأطلس المتوسط.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph ph-youtube-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>تصفح</h4>
+        <ul>
+          <li><i class="ph ph-caret-left"></i> <a href="index.html">الرئيسية</a></li>
+          <li><i class="ph ph-caret-left"></i> <a href="village.html">تاريخ القرية</a></li>
+          <li><i class="ph ph-caret-left"></i> <a href="economie.html">الاقتصاد المحلي</a></li>
+          <li><i class="ph ph-caret-left"></i> <a href="contact.html">الاتصال والموقع</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>الجماعة</h4>
+        <ul>
+          <li><i class="ph ph-caret-left"></i> <span>الجماعة القروية المرس</span></li>
+          <li><i class="ph ph-caret-left"></i> <span>إقليم بولمان</span></li>
+          <li><i class="ph ph-caret-left"></i> <span>جهة فاس مكناس</span></li>
+          <li><i class="ph ph-caret-left"></i> <span>المغرب</span></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>موقعنا</h4>
+        <ul>
+          <li><i class="ph ph-map-pin"></i> <span>إحداثيات جغرافية:<br>33°19′39″ ش، 4°41′07″ غ</span></li>
+          <li><i class="ph ph-envelope"></i> <span>الرمز البريدي: 33102</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      &copy; 2026 <strong>أم جنيبة</strong>. جميع الحقوق محفوظة.
+    </div>
   </div>
 </footer>
+
 <script src="../script.js"></script>
 </body>
 </html>
