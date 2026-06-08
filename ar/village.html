@@ -1,236 +1,240 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>أم جنيبة | القرية والتاريخ</title>
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar" id="navbar">
-  <div class="container">
-    <div class="navbar__inner">
-      <a href="index.html" class="navbar__logo">
-        <img src="../images/logOumjniba.png" alt="شعار أم جنيبة" />
-        <span>أم جنيبة</span>
-      </a>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">
+          <img src="../images/logOumjniba.png" alt="شعار أم جنيبة" />
+          <span>أم جنيبة</span>
+        </a>
 
-      <nav class="navbar__nav">
-        <a href="index.html" class="nav-link">الرئيسية</a>
-        <a href="village.html" class="nav-link active">القرية</a>
-        <a href="economie.html" class="nav-link">الاقتصاد</a>
-        <a href="boutique.html" class="nav-link">المتجر</a>
-        <a href="contact.html" class="nav-link">اتصل بنا</a>
-      </nav>
+        <nav class="navbar__nav">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="village.html" class="nav-link active">القرية</a>
+          <a href="economie.html" class="nav-link">الاقتصاد</a>
+          <a href="boutique.html" class="nav-link">المتجر</a>
+          <a href="contact.html" class="nav-link">اتصل بنا</a>
+        </nav>
 
-      <div class="navbar__right">
-        <div class="lang-picker" id="langPicker">
-          <button class="lang-picker__btn">
-            <i class="ph ph-globe"></i> AR <i class="ph ph-caret-down"></i>
-          </button>
-          <div class="lang-picker__dropdown">
-            <a href="../village.html" class="lang-picker__item">Français</a>
-            <a href="village.html" class="lang-picker__item active">العربية</a>
-            <a href="../en/village.html" class="lang-picker__item">English</a>
-            <a href="../tamazight/village.html" class="lang-picker__item">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
-          </div>
-        </div>
-        <div class="burger" id="burgerMenu">
-          <span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <nav class="mobile-menu__nav">
-    <a href="index.html" class="mobile-menu__link">الرئيسية</a>
-    <a href="village.html" class="mobile-menu__link active">القرية</a>
-    <a href="economie.html" class="mobile-menu__link">الاقتصاد</a>
-    <a href="boutique.html" class="mobile-menu__link">المتجر</a>
-    <a href="contact.html" class="mobile-menu__link">اتصل بنا</a>
-  </nav>
-  <div class="mobile-menu__langs">
-    <a href="../village.html">FR</a>
-    <a href="village.html" style="color:var(--c-gold)">AR</a>
-    <a href="../en/village.html">EN</a>
-    <a href="../tamazight/village.html">TAM</a>
-  </div>
-</div>
-
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div class="container">
-    <span class="eyebrow eyebrow--light reveal"><i class="ph ph-tree"></i> ذاكرة ومجال</span>
-    <h1 class="reveal reveal-d1">قرية أم جنيبة</h1>
-    <p class="reveal reveal-d2">اكتشف تاريخ هذه القرية الفريدة، مناخها الجبلي، تقاليدها، وبنياتها التحتية الأساسية.</p>
-  </div>
-</div>
-
-<!-- PILLARS -->
-<section class="pillars">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">هوية</span>
-      <h2>جوهر أم جنيبة</h2>
-    </div>
-    
-    <div class="pillars__grid">
-      <div class="pillar reveal">
-        <div class="pillar__num">01</div>
-        <div class="pillar__icon"><i class="ph ph-snowflake"></i></div>
-        <h3>مناخ قاسٍ</h3>
-        <p>من أبرد المناخات في إفريقيا. فصول شتاء طويلة وثلوج كثيفة تصقل الشخصية المرنة للسكان المحليين.</p>
-      </div>
-      <div class="pillar reveal reveal-d1">
-        <div class="pillar__num">02</div>
-        <div class="pillar__icon"><i class="ph ph-horse"></i></div>
-        <h3>معرفة رعوية</h3>
-        <p>ساهمت تربية الأغنام والترحال في هيكلة الاقتصاد المحلي لقرون، وتتوارث بكل فخر من جيل إلى جيل.</p>
-      </div>
-      <div class="pillar reveal reveal-d2">
-        <div class="pillar__num">03</div>
-        <div class="pillar__icon"><i class="ph ph-star-four"></i></div>
-        <h3>تراث أمازيغي</h3>
-        <p>تشكل اللغة الأمازيغية، الأمثال، والتقاليد الشفوية تراثاً حياً استثنائياً يوحد جميع عائلات القرية.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HISTORY TIMELINE -->
-<section class="process-section">
-  <div class="container">
-    <div class="process__grid">
-      <div>
-        <span class="eyebrow">تاريخنا</span>
-        <h2 class="reveal">التسلسل الزمني</h2>
-        <div class="process__steps">
-          <div class="process-step reveal">
-            <div class="process-step__num">1</div>
-            <div class="process-step__text">
-              <h4>أرض آيت سغروشن</h4>
-              <p>مرتفعات تيشوكت هي المجال التاريخي لقبائل أمازيغية تعيش على الرعي.</p>
+        <div class="navbar__right">
+          <div class="lang-picker" id="langPicker">
+            <button class="lang-picker__btn">
+              <i class="ph ph-globe"></i> AR <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="lang-picker__dropdown">
+              <a href="../village.html" class="lang-picker__item">Français</a>
+              <a href="village.html" class="lang-picker__item active">العربية</a>
+              <a href="../en/village.html" class="lang-picker__item">English</a>
+              <a href="../tamazight/village.html" class="lang-picker__item">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
             </div>
           </div>
-          <div class="process-step reveal reveal-d1">
-            <div class="process-step__num">2</div>
-            <div class="process-step__text">
-              <h4>الترحال ووديان الجوع</h4>
-              <p>لطالما شكل منخفض الجوع ملجأً شتوياً وممراً للترحال لقطعان الماشية.</p>
-            </div>
-          </div>
-          <div class="process-step reveal reveal-d2">
-            <div class="process-step__num">3</div>
-            <div class="process-step__text">
-              <h4>معقل للاستقلالية</h4>
-              <p>محمية بالجبال، حافظت هذه المجتمعات لفترة طويلة على استقلاليتها وعاداتها المحلية.</p>
-            </div>
-          </div>
-          <div class="process-step reveal reveal-d3">
-            <div class="process-step__num">4</div>
-            <div class="process-step__text">
-              <h4>التنمية الحديثة</h4>
-              <p>وصول الكهرباء، الماء الصالح للشرب، وتحسين الطرق يساهم تدريجياً في فك العزلة عن القرية.</p>
-            </div>
+          <div class="burger" id="burgerMenu">
+            <span></span><span></span><span></span>
           </div>
         </div>
       </div>
-      <div class="reveal reveal-d1">
-        <div class="process__visual">
-          <img src="../images/oum_jniba.jpeg" alt="منظر القرية" />
-          <p class="process__visual-quote">"الفم المغلق لا تدخله الذباب." — مثل أمازيغي.</p>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link">الرئيسية</a>
+      <a href="village.html" class="mobile-menu__link active">القرية</a>
+      <a href="economie.html" class="mobile-menu__link">الاقتصاد</a>
+      <a href="boutique.html" class="mobile-menu__link">المتجر</a>
+      <a href="contact.html" class="mobile-menu__link">اتصل بنا</a>
+    </nav>
+    <div class="mobile-menu__langs">
+      <a href="../village.html">FR</a>
+      <a href="village.html" style="color:var(--c-gold)">AR</a>
+      <a href="../en/village.html">EN</a>
+      <a href="../tamazight/village.html">TAM</a>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <span class="eyebrow eyebrow--light reveal"><i class="ph ph-tree"></i> ذاكرة ومجال</span>
+      <h1 class="reveal reveal-d1">قرية أم جنيبة</h1>
+      <p class="reveal reveal-d2">اكتشف تاريخ هذه القرية الفريدة، مناخها الجبلي، تقاليدها، وبنياتها التحتية الأساسية.
+      </p>
+    </div>
+  </div>
+
+  <!-- PILLARS -->
+  <section class="pillars">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">هوية</span>
+        <h2>جوهر أم جنيبة</h2>
+      </div>
+
+      <div class="pillars__grid">
+        <div class="pillar reveal">
+          <div class="pillar__num">01</div>
+          <div class="pillar__icon"><i class="ph ph-snowflake"></i></div>
+          <h3>مناخ قاسٍ</h3>
+          <p>من أبرد المناخات في إفريقيا. فصول شتاء طويلة وثلوج كثيفة تصقل الشخصية المرنة للسكان المحليين.</p>
+        </div>
+        <div class="pillar reveal reveal-d1">
+          <div class="pillar__num">02</div>
+          <div class="pillar__icon"><i class="ph ph-horse"></i></div>
+          <h3>معرفة رعوية</h3>
+          <p>ساهمت تربية الأغنام والترحال في هيكلة الاقتصاد المحلي لقرون، وتتوارث بكل فخر من جيل إلى جيل.</p>
+        </div>
+        <div class="pillar reveal reveal-d2">
+          <div class="pillar__num">03</div>
+          <div class="pillar__icon"><i class="ph ph-star-four"></i></div>
+          <h3>تراث أمازيغي</h3>
+          <p>تشكل اللغة الأمازيغية، الأمثال، والتقاليد الشفوية تراثاً حياً استثنائياً يوحد جميع عائلات القرية.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- INFRASTRUCTURES -->
-<section class="services-section">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">البنيات التحتية</span>
-      <h2>خدمات حيوية</h2>
-      <p>طورت أم جنيبة تدريجياً مرافقها لتحسين جودة حياة سكانها، رغم التحديات الجغرافية.</p>
-    </div>
-    
-    <div class="services__grid">
-      <div class="service-card reveal">
-        <div class="service-card__icon"><i class="ph ph-student"></i></div>
-        <h3>المدرسة الابتدائية</h3>
-        <p>تستقبل مدرسة القرية أطفال المنطقة، مما يضمن التعليم الأساسي دون الحاجة لقطع عشرات الكيلومترات.</p>
-      </div>
-      <div class="service-card reveal reveal-d1">
-        <div class="service-card__icon"><i class="ph ph-mosque"></i></div>
-        <h3>المسجد المركزي</h3>
-        <p>مكان للعبادة وأيضاً معلم مركزي للحياة الروحية والاجتماعية للقرية منذ تأسيسها.</p>
-      </div>
-      <div class="service-card reveal reveal-d2">
-        <div class="service-card__icon"><i class="ph ph-drop"></i></div>
-        <h3>شبكة المياه</h3>
-        <p>الربط والإدارة المحلية للماء الصالح للشرب غيرا الحياة اليومية بشكل جذري، خاصة بالنسبة للنساء.</p>
-      </div>
-      <div class="service-card reveal reveal-d3">
-        <div class="service-card__icon"><i class="ph ph-road-horizon"></i></div>
-        <h3>طرق جبلية</h3>
-        <p>مسالك صالحة للسيارات تربط القرية ببولمان، وتتطلب إزالة الثلوج باستمرار خلال فصل الشتاء.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <img src="../images/logOumjniba.png" alt="شعار أم جنيبة" class="footer__logo" />
-        <p>البوابة الرسمية لقرية أم جنيبة. جسر يربط بين السكان، المهجر، ومحبي الأطلس المتوسط.</p>
-        <div class="footer__socials">
-          <a href="#"><i class="ph ph-facebook-logo"></i></a>
-          <a href="#"><i class="ph ph-instagram-logo"></i></a>
-          <a href="#"><i class="ph ph-youtube-logo"></i></a>
+  <!-- HISTORY TIMELINE -->
+  <section class="process-section">
+    <div class="container">
+      <div class="process__grid">
+        <div>
+          <span class="eyebrow">تاريخنا</span>
+          <h2 class="reveal">التسلسل الزمني</h2>
+          <div class="process__steps">
+            <div class="process-step reveal">
+              <div class="process-step__num">1</div>
+              <div class="process-step__text">
+                <h4>أرض آيت سغروشن</h4>
+                <p>مرتفعات تيشوكت هي المجال التاريخي لقبائل أمازيغية تعيش على الرعي.</p>
+              </div>
+            </div>
+            <div class="process-step reveal reveal-d1">
+              <div class="process-step__num">2</div>
+              <div class="process-step__text">
+                <h4>الترحال ووديان الجوا</h4>
+                <p>لطالما شكل منخفض الجوا ملجأً شتوياً وممراً للترحال لقطعان الماشية.</p>
+              </div>
+            </div>
+            <div class="process-step reveal reveal-d2">
+              <div class="process-step__num">3</div>
+              <div class="process-step__text">
+                <h4>معقل للاستقلالية</h4>
+                <p>محمية بالجبال، حافظت هذه المجتمعات لفترة طويلة على استقلاليتها وعاداتها المحلية.</p>
+              </div>
+            </div>
+            <div class="process-step reveal reveal-d3">
+              <div class="process-step__num">4</div>
+              <div class="process-step__text">
+                <h4>التنمية الحديثة</h4>
+                <p>وصول الكهرباء، الماء الصالح للشرب، وتحسين الطرق يساهم تدريجياً في فك العزلة عن القرية.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-d1">
+          <div class="process__visual">
+            <img src="../images/oum_jniba.jpeg" alt="منظر القرية" />
+            <p class="process__visual-quote">"الفم المغلق لا تدخله الذباب." — مثل أمازيغي.</p>
+          </div>
         </div>
       </div>
-      <div class="footer__col">
-        <h4>تصفح</h4>
-        <ul>
-          <li><i class="ph ph-caret-left"></i> <a href="index.html">الرئيسية</a></li>
-          <li><i class="ph ph-caret-left"></i> <a href="village.html">تاريخ القرية</a></li>
-          <li><i class="ph ph-caret-left"></i> <a href="economie.html">الاقتصاد المحلي</a></li>
-          <li><i class="ph ph-caret-left"></i> <a href="boutique.html">متجر المنتجات</a></li>
-          <li><i class="ph ph-caret-left"></i> <a href="contact.html">الاتصال والموقع</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>الجماعة</h4>
-        <ul>
-          <li><i class="ph ph-caret-left"></i> <span>الجماعة القروية المرس</span></li>
-          <li><i class="ph ph-caret-left"></i> <span>إقليم بولمان</span></li>
-          <li><i class="ph ph-caret-left"></i> <span>جهة فاس مكناس</span></li>
-          <li><i class="ph ph-caret-left"></i> <span>المغرب</span></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>موقعنا</h4>
-        <ul>
-          <li><i class="ph ph-map-pin"></i> <span>إحداثيات جغرافية:<br>33°19′39″ ش، 4°41′07″ غ</span></li>
-          <li><i class="ph ph-envelope"></i> <span>الرمز البريدي: 33102</span></li>
-        </ul>
-      </div>
     </div>
-    <div class="footer__bar">
-      &copy; 2026 <strong>أم جنيبة</strong>. جميع الحقوق محفوظة.
-    </div>
-  </div>
-</footer>
+  </section>
 
-<script src="../script.js"></script>
+  <!-- INFRASTRUCTURES -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">البنيات التحتية</span>
+        <h2>خدمات حيوية</h2>
+        <p>طورت أم جنيبة تدريجياً مرافقها لتحسين جودة حياة سكانها، رغم التحديات الجغرافية.</p>
+      </div>
+
+      <div class="services__grid">
+        <div class="service-card reveal">
+          <div class="service-card__icon"><i class="ph ph-student"></i></div>
+          <h3>المدرسة الابتدائية</h3>
+          <p>تستقبل مدرسة القرية أطفال المنطقة، مما يضمن التعليم الأساسي دون الحاجة لقطع عشرات الكيلومترات.</p>
+        </div>
+        <div class="service-card reveal reveal-d1">
+          <div class="service-card__icon"><i class="ph ph-mosque"></i></div>
+          <h3>المسجد المركزي</h3>
+          <p>مكان للعبادة وأيضاً معلم مركزي للحياة الروحية والاجتماعية للقرية منذ تأسيسها.</p>
+        </div>
+        <div class="service-card reveal reveal-d2">
+          <div class="service-card__icon"><i class="ph ph-drop"></i></div>
+          <h3>شبكة المياه</h3>
+          <p>الربط والإدارة المحلية للماء الصالح للشرب غيرا الحياة اليومية بشكل جذري، خاصة بالنسبة للنساء.</p>
+        </div>
+        <div class="service-card reveal reveal-d3">
+          <div class="service-card__icon"><i class="ph ph-road-horizon"></i></div>
+          <h3>طرق جبلية</h3>
+          <p>مسالك صالحة للسيارات تربط القرية ببولمان، وتتطلب إزالة الثلوج باستمرار خلال فصل الشتاء.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="../images/logOumjniba.png" alt="شعار أم جنيبة" class="footer__logo" />
+          <p>البوابة الرسمية لقرية أم جنيبة. جسر يربط بين السكان، المهجر، ومحبي الأطلس المتوسط.</p>
+          <div class="footer__socials">
+            <a href="#"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>تصفح</h4>
+          <ul>
+            <li><i class="ph ph-caret-left"></i> <a href="index.html">الرئيسية</a></li>
+            <li><i class="ph ph-caret-left"></i> <a href="village.html">تاريخ القرية</a></li>
+            <li><i class="ph ph-caret-left"></i> <a href="economie.html">الاقتصاد المحلي</a></li>
+            <li><i class="ph ph-caret-left"></i> <a href="boutique.html">متجر المنتجات</a></li>
+            <li><i class="ph ph-caret-left"></i> <a href="contact.html">الاتصال والموقع</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>الجماعة</h4>
+          <ul>
+            <li><i class="ph ph-caret-left"></i> <span>الجماعة القروية المرس</span></li>
+            <li><i class="ph ph-caret-left"></i> <span>إقليم بولمان</span></li>
+            <li><i class="ph ph-caret-left"></i> <span>جهة فاس مكناس</span></li>
+            <li><i class="ph ph-caret-left"></i> <span>المغرب</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>موقعنا</h4>
+          <ul>
+            <li><i class="ph ph-map-pin"></i> <span>إحداثيات جغرافية:<br>33°19′39″ ش، 4°41′07″ غ</span></li>
+            <li><i class="ph ph-envelope"></i> <span>الرمز البريدي: 33102</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        &copy; 2026 <strong>أم جنيبة</strong>. جميع الحقوق محفوظة.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
+
 </html>
