@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oumjniba | Home</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="../images/logOumjniba.png" alt="Oumjniba Logo" />
+        <span>Oumjniba</span>
+      </a>
+      <nav class="navbar__nav-desktop">
+        <a href="index.html" class="navbar__link active">Home</a>
+        <a href="village.html" class="navbar__link">The Village</a>
+        <a href="economie.html" class="navbar__link">Economy</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </nav>
+      <div class="navbar__actions">
+        <div class="lang-selector">
+          <button class="lang-btn"><i class="ph ph-globe"></i> EN <i class="ph ph-caret-down"></i></button>
+          <div class="lang-dropdown">
+            <a href="../index.html">Français</a>
+            <a href="../ar/index.html">العربية</a>
+            <a href="index.html">English</a>
+            <a href="../tamazight/index.html">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+          </div>
+        </div>
+        <button class="navbar__burger" id="navBurger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero__bg-wrap">
+    <img src="../images/oum_jniba.jpeg" alt="Tichoukt Landscape" class="hero__bg-img" />
+    <div class="hero__overlay"></div>
+  </div>
+  <div class="container">
+    <div class="hero__content-centered">
+      <span class="hero__eyebrow-pill reveal reveal-d1"><i class="ph ph-map-pin"></i> Middle Atlas · Morocco</span>
+      <h1 class="hero__title-large reveal reveal-d2">At the foot of <span class="text-gradient">Tichoukt</span>, life rises.</h1>
+      <p class="hero__desc-large reveal reveal-d3">An exceptional mountain village in the Boulemane province. Renowned for its winter isolation and strong community bonds.</p>
+      <div class="hero__btns reveal reveal-d3">
+        <a href="village.html" class="btn btn-primary">Discover the village <i class="ph ph-arrow-right"></i></a>
+        <a href="contact.html" class="btn btn-white-outline">Find us <i class="ph ph-map-trifold"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-bar__grid">
+      <div class="stat-item reveal">
+        <div class="stat-item__number">1,931<span class="stat-item__small">m</span></div>
+        <div class="stat-item__label">Altitude</div>
+      </div>
+      <div class="stat-item reveal reveal-d1">
+        <div class="stat-item__number">2,796<span class="stat-item__small">m</span></div>
+        <div class="stat-item__label">Tichoukt Summit</div>
+      </div>
+      <div class="stat-item reveal reveal-d2">
+        <div class="stat-item__number">110<span class="stat-item__small">km</span></div>
+        <div class="stat-item__label">From Fez</div>
+      </div>
+      <div class="stat-item reveal reveal-d3">
+        <div class="stat-item__number">03<span class="stat-item__small">Months</span></div>
+        <div class="stat-item__label">Winter under snow</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="bento-section">
+  <div class="container">
+    <div class="bento-grid" style="margin-top:60px;">
+      <div class="bento-card bento-card--large reveal reveal-d1" style="display:flex;flex-direction:column;justify-content:center;padding:60px;">
+        <h3 style="font-size:2.5rem;margin-bottom:20px;">Welcome to Oumjniba</h3>
+        <p style="font-size:1.2rem;line-height:1.8;">Oumjniba is not just a village. It is a territory that has forged the character of its inhabitants, between extreme isolation and unwavering solidarity. Explore our heritage.</p>
+        <a href="village.html" class="btn btn-white-solid" style="align-self:flex-start;margin-top:30px;">See the history <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div class="bento-card reveal reveal-d2" style="background:url('../images/oum_jniba.jpeg') center/cover;position:relative;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);border-radius:20px;"></div>
+        <div style="position:relative;z-index:2;color:#fff;height:100%;display:flex;flex-direction:column;justify-content:flex-end;">
+          <h3 style="color:#fff;">Local Economy</h3>
+          <a href="economie.html" style="color:var(--clr-brand-gold);font-weight:bold;margin-top:10px;display:flex;align-items:center;gap:8px;">Learn more <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <img src="../images/logOumjniba.png" alt="Oumjniba Logo" />
+    <p>© 2026 <strong>Oumjniba</strong>. Boulemane Province, Morocco.</p>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

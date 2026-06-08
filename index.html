@@ -1,20 +1,119 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Oumjniba (أم جنيبة), douar de la commune d'El Mers, province de Boulemane, Moyen Atlas." />
-  <link rel="icon" href="images/logOumjniba.png" type="image/png" />
-  <title>Oumjniba — أم جنيبة</title>
-  <!-- Redirige automatiquement vers la page du site -->
-  <meta http-equiv="refresh" content="0; url=app/oum-jniba.html" />
-  <link rel="canonical" href="app/oum-jniba.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oumjniba | Accueil</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <p style="font-family:sans-serif;text-align:center;margin-top:40px;">
-    Redirection vers le site Oumjniba…
-    <a href="app/oum-jniba.html">Cliquez ici si rien ne se passe.</a>
-  </p>
-  <script>window.location.replace('app/oum-jniba.html');</script>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logOumjniba.png" alt="Logo Oumjniba" />
+        <span>Oumjniba</span>
+      </a>
+
+      <nav class="navbar__nav-desktop">
+        <a href="index.html" class="navbar__link active">Accueil</a>
+        <a href="village.html" class="navbar__link">Le Village</a>
+        <a href="economie.html" class="navbar__link">Économie</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <div class="lang-selector">
+          <button class="lang-btn" aria-label="Langues"><i class="ph ph-globe"></i> FR <i class="ph ph-caret-down"></i></button>
+          <div class="lang-dropdown">
+            <a href="index.html">Français</a>
+            <a href="ar/index.html">العربية</a>
+            <a href="en/index.html">English</a>
+            <a href="tamazight/index.html">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+          </div>
+        </div>
+        <button class="navbar__burger" id="navBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__bg-wrap">
+    <img src="images/oum_jniba.jpeg" alt="Paysage du Tichoukt" class="hero__bg-img" />
+    <div class="hero__overlay"></div>
+  </div>
+  <div class="container">
+    <div class="hero__content-centered">
+      <span class="hero__eyebrow-pill reveal reveal-d1"><i class="ph ph-map-pin"></i> Moyen Atlas · Maroc</span>
+      <h1 class="hero__title-large reveal reveal-d2">Au pied du <span class="text-gradient">Tichoukt</span>, la vie s'élève.</h1>
+      <p class="hero__desc-large reveal reveal-d3">Un douar de montagne exceptionnel dans la province de Boulemane. Réputé pour son isolement hivernal et ses liens communautaires forts.</p>
+      <div class="hero__btns reveal reveal-d3">
+        <a href="village.html" class="btn btn-primary">Découvrir le village <i class="ph ph-arrow-right"></i></a>
+        <a href="contact.html" class="btn btn-white-outline">Nous situer <i class="ph ph-map-trifold"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-bar__grid">
+      <div class="stat-item reveal">
+        <div class="stat-item__number">1 931<span class="stat-item__small">m</span></div>
+        <div class="stat-item__label">D'Altitude</div>
+      </div>
+      <div class="stat-item reveal reveal-d1">
+        <div class="stat-item__number">2 796<span class="stat-item__small">m</span></div>
+        <div class="stat-item__label">Sommet Tichoukt</div>
+      </div>
+      <div class="stat-item reveal reveal-d2">
+        <div class="stat-item__number">110<span class="stat-item__small">km</span></div>
+        <div class="stat-item__label">De Fès</div>
+      </div>
+      <div class="stat-item reveal reveal-d3">
+        <div class="stat-item__number">03<span class="stat-item__small">Mois</span></div>
+        <div class="stat-item__label">D'hiver sous la neige</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO BENTO -->
+<section class="bento-section">
+  <div class="container">
+    <div class="bento-grid" style="margin-top: 60px;">
+      <div class="bento-card bento-card--large reveal reveal-d1" style="display: flex; flex-direction: column; justify-content: center; padding: 60px;">
+        <h3 style="font-size: 2.5rem; margin-bottom: 20px;">Bienvenue à Oumjniba</h3>
+        <p style="font-size: 1.2rem; line-height: 1.8;">Oumjniba n'est pas qu'un village. C'est un territoire qui a forgé le caractère de ses habitants, entre isolement extrême et solidarité inébranlable. Explorez notre héritage.</p>
+        <a href="village.html" class="btn btn-white-solid" style="align-self: flex-start; margin-top: 30px;">Voir l'histoire <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div class="bento-card reveal reveal-d2" style="background: url('images/oum_jniba.jpeg') center/cover; position: relative;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); border-radius: 20px;"></div>
+        <div style="position: relative; z-index: 2; color: #fff; height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+          <h3 style="color:#fff;">Économie Locale</h3>
+          <a href="economie.html" style="color: var(--clr-brand-gold); font-weight: bold; margin-top: 10px; display: flex; align-items: center; gap: 8px;">En savoir plus <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <img src="images/logOumjniba.png" alt="Oumjniba Logo" />
+    <p>© 2026 <strong>Oumjniba</strong>. Province de Boulemane, Maroc.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
