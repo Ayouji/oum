@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oumjniba | Contact & Localisation</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logOumjniba.png" alt="Logo Oumjniba" />
+        <span>Oumjniba</span>
+      </a>
+
+      <nav class="navbar__nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="village.html" class="nav-link">Le Village</a>
+        <a href="economie.html" class="nav-link">Économie</a>
+        <a href="boutique.html" class="nav-link">Boutique</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="navbar__right">
+        <div class="lang-picker" id="langPicker">
+          <button class="lang-picker__btn">
+            <i class="ph ph-globe"></i> FR <i class="ph ph-caret-down"></i>
+          </button>
+          <div class="lang-picker__dropdown">
+            <a href="contact.html" class="lang-picker__item active">Français</a>
+            <a href="ar/contact.html" class="lang-picker__item">العربية</a>
+            <a href="en/contact.html" class="lang-picker__item">English</a>
+            <a href="tamazight/contact.html" class="lang-picker__item">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+          </div>
+        </div>
+        <div class="burger" id="burgerMenu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-menu__nav">
+    <a href="index.html" class="mobile-menu__link">Accueil</a>
+    <a href="village.html" class="mobile-menu__link">Le Village</a>
+    <a href="economie.html" class="mobile-menu__link">Économie</a>
+    <a href="boutique.html" class="mobile-menu__link">Boutique</a>
+    <a href="contact.html" class="mobile-menu__link active">Contact</a>
+  </nav>
+  <div class="mobile-menu__langs">
+    <a href="contact.html" style="color:var(--c-gold)">FR</a>
+    <a href="ar/contact.html">AR</a>
+    <a href="en/contact.html">EN</a>
+    <a href="tamazight/contact.html">TAM</a>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header" style="padding-bottom: 40px;">
+  <div class="container">
+    <span class="eyebrow eyebrow--light reveal"><i class="ph ph-map-pin"></i> Accès & Géographie</span>
+    <h1 class="reveal reveal-d1">Localisation</h1>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-section__grid">
+      <div class="reveal">
+        <h2>Où sommes-nous ?</h2>
+        <p class="lead" style="margin-top:var(--s-4);">
+          Situé dans la Province de Boulemane, Région Fès-Meknès, le douar Oumjniba dépend de la commune rurale d'El Mers. Il se dresse fièrement au pied du majestueux massif du Tichoukt, à 110km de la ville impériale de Fès.
+        </p>
+        <div class="contact-trust-list reveal reveal-d1">
+          <div class="contact-trust-row">
+            <div class="contact-trust-icon"><i class="ph ph-crosshair"></i></div>
+            <div>
+              <strong>Coordonnées GPS</strong>
+              <span>33°19′39″ N, 4°41′07″ O</span>
+            </div>
+          </div>
+          <div class="contact-trust-row">
+            <div class="contact-trust-icon"><i class="ph ph-mountains"></i></div>
+            <div>
+              <strong>Altitude Moyenne</strong>
+              <span>1 931 mètres (Tichoukt: 2 796m)</span>
+            </div>
+          </div>
+          <div class="contact-trust-row">
+            <div class="contact-trust-icon"><i class="ph ph-envelope"></i></div>
+            <div>
+              <strong>Code Postal</strong>
+              <span>33102 — Commune El Mers</span>
+            </div>
+          </div>
+          <div class="contact-trust-row">
+            <div class="contact-trust-icon"><i class="ph ph-buildings"></i></div>
+            <div>
+              <strong>Administration</strong>
+              <span>Province de Boulemane, Région Fès-Meknès</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="images/logOumjniba.png" alt="Oumjniba Logo" class="footer__logo" />
+        <p>Le portail officiel du douar Oumjniba. Un pont entre les habitants, la diaspora et les amoureux du Moyen Atlas.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph ph-youtube-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <a href="index.html">Accueil</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="village.html">Histoire du Village</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="economie.html">Économie Locale</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="boutique.html">Boutique & Terroir</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="contact.html">Contact & Localisation</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Commune</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <span>Commune rurale d'El Mers</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Province de Boulemane</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Région Fès-Meknès</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Maroc</span></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Nous situer</h4>
+        <ul>
+          <li><i class="ph ph-map-pin"></i> <span>Coordonnées GPS:<br>33°19′39″ N, 4°41′07″ O</span></li>
+          <li><i class="ph ph-envelope"></i> <span>CP: 33102</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      &copy; 2026 <strong>Oumjniba</strong>. Tous droits réservés.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="script.js"></script>
+<script>
+  try {
+    var map = L.map('map').setView([33.32741, -4.68532], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '© OpenStreetMap' }).addTo(map);
+    L.marker([33.32741, -4.68532]).addTo(map).bindPopup('<b style="color:var(--c-green);">Oumjniba</b><br/>Commune El Mers, Province de Boulemane').openPopup();
+  } catch(e) { document.getElementById('map').innerHTML='<div style="padding:40px; color:#1A1A1A; text-align:center;">Carte indisponible.</div>'; }
+</script>
+</body>
+</html>

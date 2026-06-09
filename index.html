@@ -1,20 +1,244 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Oumjniba (أم جنيبة), douar de la commune d'El Mers, province de Boulemane, Moyen Atlas." />
-  <link rel="icon" href="images/logOumjniba.png" type="image/png" />
-  <title>Oumjniba — أم جنيبة</title>
-  <!-- Redirige automatiquement vers la page du site -->
-  <meta http-equiv="refresh" content="0; url=app/oum-jniba.html" />
-  <link rel="canonical" href="app/oum-jniba.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oumjniba | Accueil</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <p style="font-family:sans-serif;text-align:center;margin-top:40px;">
-    Redirection vers le site Oumjniba…
-    <a href="app/oum-jniba.html">Cliquez ici si rien ne se passe.</a>
-  </p>
-  <script>window.location.replace('app/oum-jniba.html');</script>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logOumjniba.png" alt="Logo Oumjniba" />
+        <span>Oumjniba</span>
+      </a>
+
+      <nav class="navbar__nav">
+        <a href="index.html" class="nav-link active">Accueil</a>
+        <a href="village.html" class="nav-link">Le Village</a>
+        <a href="economie.html" class="nav-link">Économie</a>
+        <a href="boutique.html" class="nav-link">Boutique</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="navbar__right">
+        <div class="lang-picker" id="langPicker">
+          <button class="lang-picker__btn">
+            <i class="ph ph-globe"></i> FR <i class="ph ph-caret-down"></i>
+          </button>
+          <div class="lang-picker__dropdown">
+            <a href="index.html" class="lang-picker__item active">Français</a>
+            <a href="ar/index.html" class="lang-picker__item">العربية</a>
+            <a href="en/index.html" class="lang-picker__item">English</a>
+            <a href="tamazight/index.html" class="lang-picker__item">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+          </div>
+        </div>
+        <div class="burger" id="burgerMenu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-menu__nav">
+    <a href="index.html" class="mobile-menu__link active">Accueil</a>
+    <a href="village.html" class="mobile-menu__link">Le Village</a>
+    <a href="economie.html" class="mobile-menu__link">Économie</a>
+    <a href="boutique.html" class="mobile-menu__link">Boutique</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+  </nav>
+  <div class="mobile-menu__langs">
+    <a href="index.html" style="color:var(--c-gold)">FR</a>
+    <a href="ar/index.html">AR</a>
+    <a href="en/index.html">EN</a>
+    <a href="tamazight/index.html">TAM</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__media">
+    <div class="hero__slideshow">
+      <div class="hero__slide active" style="background-image: url('images/oum_jniba.jpeg')"></div>
+      <div class="hero__slide" style="background-image: url('https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&q=80&w=2000')"></div>
+      <div class="hero__slide" style="background-image: url('images/log_multitech.jpeg')"></div>
+      <div class="hero__slide" style="background-image: url('images/logOumjniba.png')"></div>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__vignette"></div>
+  </div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__tag reveal">
+        <i class="ph ph-map-pin"></i> Moyen Atlas, Maroc
+      </div>
+      <h1 class="hero__title reveal reveal-d1">
+        L'âme du <br><em>Tichoukt</em>.
+      </h1>
+      <p class="hero__desc reveal reveal-d2">
+        Niché à près de 2000 mètres d'altitude, Oumjniba est un douar où la rudesse de l'hiver forge la solidarité de ses habitants. Un patrimoine amazigh vivant.
+      </p>
+      <div class="hero__actions reveal reveal-d3">
+        <a href="village.html" class="btn btn--primary">Découvrir l'histoire <i class="ph ph-arrow-right"></i></a>
+        <a href="contact.html" class="btn btn--outline-white">Nous situer</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll">
+    Découvrir
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__media reveal">
+        <div class="about__img-wrap">
+          <img src="images/oum_jniba.jpeg" alt="Vue du village" />
+          <div class="about__badge">
+            <i class="ph ph-tree-evergreen"></i>
+            <div>
+              <strong>Commune El Mers</strong>
+              <span>Province de Boulemane</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about__body reveal reveal-d1">
+        <span class="eyebrow">Bienvenue</span>
+        <h2>Un territoire de caractère.</h2>
+        <p class="lead">Oumjniba n'est pas un simple village. C'est un lieu qui a façonné les hommes autant que les hommes l'ont façonné.</p>
+        <p>Isolé durant les longs mois d'hiver, ce douar du Moyen Atlas préserve un mode de vie authentique, rythmé par les saisons, l'élevage pastoral et les traditions amazighes séculaires de la tribu des Aït Seghrouchen.</p>
+        <ul class="about__list">
+          <li><i class="ph ph-check-circle"></i> Un climat montagnard extrême</li>
+          <li><i class="ph ph-check-circle"></i> Un esprit de solidarité (Touiza)</li>
+          <li><i class="ph ph-check-circle"></i> Une économie locale résiliente</li>
+        </ul>
+        <a href="village.html" class="btn btn--outline" style="margin-top:var(--s-4)">En savoir plus sur le village</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOVER -->
+<section class="discover">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Dynamique Locale</span>
+      <h2>Vivre à Oumjniba</h2>
+      <p>Entre héritage ancestral et initiatives modernes, le village se développe grâce à l'implication de ses habitants et de sa diaspora.</p>
+    </div>
+    
+    <div class="discover__grid">
+      <a href="economie.html" class="disc-card disc-card--photo reveal">
+        <img src="images/oum_jniba.jpeg" alt="Paysage" />
+        <div class="disc-card__overlay"></div>
+        <div class="disc-card__body">
+          <div class="disc-card__cat">Économie & Coopératives</div>
+          <h3>Les forces vives du douar</h3>
+          <p>De l'agriculture d'altitude aux entreprises technologiques créées par les enfants du village, découvrez le tissu économique.</p>
+          <span class="disc-card__link">Voir les acteurs locaux <i class="ph ph-arrow-right"></i></span>
+        </div>
+      </a>
+      
+      <div class="discover__col">
+        <a href="village.html" class="disc-card disc-card--dark reveal reveal-d1">
+          <div class="disc-card__body">
+            <div class="disc-card__icon"><i class="ph ph-books"></i></div>
+            <div class="disc-card__cat">Éducation</div>
+            <h3>L'École d'Oumjniba</h3>
+            <p>Le pilier du savoir pour les générations futures du village.</p>
+            <span class="disc-card__link disc-card__link--light">Lire la suite <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+        
+        <a href="economie.html" class="disc-card disc-card--gold reveal reveal-d2">
+          <div class="disc-card__body">
+            <div class="disc-card__icon"><i class="ph ph-users-three"></i></div>
+            <div class="disc-card__cat">Société Civile</div>
+            <h3>Tissu associatif</h3>
+            <p>Solidarité, accès à l'eau, développement des femmes : les associations en action.</p>
+            <span class="disc-card__link disc-card__link--light">Découvrir <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BANNER -->
+<section class="quote-banner">
+  <div class="quote-banner__bg">
+    <img src="images/oum_jniba.jpeg" alt="Texture" />
+  </div>
+  <div class="quote-banner__overlay"></div>
+  <div class="container">
+    <div class="quote-banner__content reveal">
+      <div class="quote-banner__mark">"</div>
+      <div class="quote-banner__text">Dans une bouche fermée, n'entrent pas les mouches. La sagesse amazighe des montagnes du Tichoukt.</div>
+      <div class="quote-banner__author">— PROVERBE LOCAL</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="images/logOumjniba.png" alt="Oumjniba Logo" class="footer__logo" />
+        <p>Le portail officiel du douar Oumjniba. Un pont entre les habitants, la diaspora et les amoureux du Moyen Atlas.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph ph-youtube-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <a href="index.html">Accueil</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="village.html">Histoire du Village</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="economie.html">Économie Locale</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="boutique.html">Boutique & Terroir</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="contact.html">Contact & Localisation</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Commune</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <span>Commune rurale d'El Mers</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Province de Boulemane</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Région Fès-Meknès</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Maroc</span></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Nous situer</h4>
+        <ul>
+          <li><i class="ph ph-map-pin"></i> <span>Coordonnées GPS:<br>33°19′39″ N, 4°41′07″ O</span></li>
+          <li><i class="ph ph-envelope"></i> <span>CP: 33102</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      &copy; 2026 <strong>Oumjniba</strong>. Tous droits réservés.
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
