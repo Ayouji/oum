@@ -6,6 +6,45 @@
   <title>أم جنيبة | الاقتصاد والجمعيات</title>
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .activity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--s-6);margin-top:var(--s-10);}
+    .activity-card{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:var(--s-8) var(--s-6);text-align:center;box-shadow:var(--sh-sm);transition:transform var(--t-base),box-shadow var(--t-base),border-color var(--t-base);}
+    .activity-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:var(--c-gold-lt);}
+    .activity-card__icon{font-size:2.6rem;line-height:1;}
+    .activity-card__title{font-family:var(--ff-head);font-size:1.2rem;color:var(--c-dark);margin-top:var(--s-3);}
+    .activity-card__desc{color:var(--c-ink-3);font-size:.9rem;margin-top:var(--s-2);}
+    .case-card__head-flex{display:flex;align-items:center;gap:var(--s-4);}
+    .case-card__logo{height:54px;width:auto;max-width:120px;border-radius:var(--r-sm);object-fit:contain;background:#fff;border:1px solid var(--c-border);padding:4px;}
+    .case-card__links{display:flex;flex-wrap:wrap;gap:var(--s-3) var(--s-5);margin-top:var(--s-4);}
+    .case-card__links a,.case-card__links span{color:var(--c-ink-2);font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+    .case-card__links a:hover{color:var(--c-gold);}
+    .izil-banner{position:relative;border-radius:var(--r-lg);overflow:hidden;margin-bottom:var(--s-6);box-shadow:var(--sh-lg);}
+    .izil-banner__bg{position:absolute;inset:0;background:url('../images/backizil.jpeg') center/cover no-repeat;}
+    .izil-banner__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(11,45,31,.93),rgba(7,32,15,.72));}
+    .izil-banner__content{position:relative;z-index:1;padding:var(--s-10) var(--s-8);color:#fff;display:flex;gap:var(--s-8);align-items:center;flex-wrap:wrap;}
+    .izil-banner__logo{height:90px;width:auto;border-radius:var(--r-md);background:#fff;padding:8px;flex-shrink:0;}
+    .izil-banner__info{flex:1;min-width:250px;}
+    .izil-banner__info h3{font-family:var(--ff-head);font-size:1.8rem;margin-bottom:6px;}
+    .izil-banner__tag{color:var(--c-gold-lt);font-weight:600;font-size:.95rem;}
+    .izil-banner__desc{color:rgba(255,255,255,.88);margin:var(--s-3) 0;line-height:1.6;}
+    .izil-banner__links{display:flex;flex-wrap:wrap;gap:var(--s-5);margin-top:var(--s-4);}
+    .izil-banner__links a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:500;}
+    .izil-banner__links a:hover{color:var(--c-gold-lt);}
+    .ent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:var(--s-5);margin-top:var(--s-8);}
+    .ent-item{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--r-md);padding:var(--s-5) var(--s-6);box-shadow:var(--sh-sm);transition:transform var(--t-base),box-shadow var(--t-base);}
+    .ent-item:hover{transform:translateY(-4px);box-shadow:var(--sh-md);}
+    .ent-item__name{font-family:var(--ff-head);font-size:1.15rem;color:var(--c-dark);}
+    .ent-item__sector{display:inline-flex;align-items:center;gap:6px;color:var(--c-gold);font-size:.85rem;font-weight:600;margin-top:6px;}
+    .assoc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:var(--s-5);margin-top:var(--s-8);}
+    .assoc-card{background:var(--c-white);border:1px solid var(--c-border);border-inline-start:4px solid var(--c-gold);border-radius:var(--r-md);padding:var(--s-5) var(--s-6);box-shadow:var(--sh-sm);transition:transform var(--t-base),box-shadow var(--t-base);}
+    .assoc-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);}
+    .assoc-card__top{display:flex;align-items:center;justify-content:space-between;}
+    .assoc-card__icon{font-size:1.9rem;}
+    .assoc-card__num{color:var(--c-ink-3);font-size:.8rem;font-weight:700;}
+    .assoc-card__name{font-family:var(--ff-head);font-size:1.05rem;color:var(--c-dark);margin-top:8px;line-height:1.3;}
+    .assoc-card__domain{display:inline-block;margin-top:10px;background:var(--c-gold-pale);color:var(--c-gold);font-size:.76rem;font-weight:600;padding:3px 11px;border-radius:999px;}
+    .coop-pres{display:inline-flex;align-items:center;gap:6px;color:var(--c-ink-3);font-size:.85rem;margin-top:8px;}
+  </style>
 </head>
 <body>
 
@@ -68,88 +107,234 @@
   <div class="container">
     <span class="eyebrow eyebrow--light reveal"><i class="ph ph-chart-line-up"></i> النسيج الاقتصادي</span>
     <h1 class="reveal reveal-d1">الاقتصاد والجمعيات</h1>
-    <p class="reveal reveal-d2">الفاعلون الذين ينشطون أم جنيبة: المقاولون، التعاونيات الفلاحية، والجمعيات التضامنية.</p>
+    <p class="reveal reveal-d2">الفاعلون الذين ينشطون أم جنيبة: معارف المنطقة، المقاولون من أبناء الدوار، التعاونيات والجمعيات التضامنية.</p>
   </div>
 </div>
 
-<!-- ENTREPRISES & COOPERATIVES -->
+<!-- ANSHITA IQTISADIYA -->
 <section class="results-section">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">دينامية محلية</span>
-      <h2>الشركات والتعاونيات</h2>
-      <p>أبناء وبنات القرية الذين يبنون ويثمنون منطقتهم من خلال مبادرات اقتصادية متميزة.</p>
+      <span class="eyebrow">معارف المنطقة</span>
+      <h2>الأنشطة الاقتصادية</h2>
+      <p>اقتصاد جبلي متجذر في الأرض وتربية الماشية والصناعة التقليدية، يتوارث جيلاً بعد جيل في سفح جبل تيشوكت.</p>
+    </div>
+
+    <div class="activity-grid">
+      <div class="activity-card reveal">
+        <div class="activity-card__icon">🐑</div>
+        <div class="activity-card__title">تربية الماشية</div>
+        <div class="activity-card__desc">مربّون ورعاة — قطعان الأغنام والماعز المتأقلمة مع الارتفاع.</div>
+      </div>
+      <div class="activity-card reveal reveal-d1">
+        <div class="activity-card__icon">🍯</div>
+        <div class="activity-card__title">تربية النحل</div>
+        <div class="activity-card__desc">عسل جبلي يُجنى من الأزهار البرية للأطلس المتوسط.</div>
+      </div>
+      <div class="activity-card reveal reveal-d2">
+        <div class="activity-card__icon">🧶</div>
+        <div class="activity-card__title">الصناعة التقليدية</div>
+        <div class="activity-card__desc">النسيج والزرابي الأمازيغية، تراث حي يتوارث من الأم إلى الابنة.</div>
+      </div>
+      <div class="activity-card reveal reveal-d3">
+        <div class="activity-card__icon">🏔️</div>
+        <div class="activity-card__title">السياحة</div>
+        <div class="activity-card__desc">سياحة جبلية: المشي، الثلج والسياحة البيئية.</div>
+      </div>
+      <div class="activity-card reveal reveal-d4">
+        <div class="activity-card__icon">🌾</div>
+        <div class="activity-card__title">الفلاحة</div>
+        <div class="activity-card__desc">زراعات الارتفاع، ومنها الزعفران الثمين «الذهب الأحمر».</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MUQAWILUN -->
+<section class="results-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">أبناء الدوار</span>
+      <h2>مقاولون من أبناء أم جنيبة</h2>
+      <p>رجال ونساء يرفعون اسم أم جنيبة عالياً، من الأطلس المتوسط إلى كبرى مدن المملكة.</p>
     </div>
 
     <div class="case-card reveal">
       <div class="case-card__header">
-        <div>
-          <div class="case-card__type"><i class="ph ph-shield-check"></i> شركة رائدة · التكنولوجيا</div>
-          <div class="case-card__name">Multitech El Idrissi</div>
+        <div class="case-card__head-flex">
+          <img src="../images/log_multitech.jpeg" alt="شعار Multitech El Idrissi" class="case-card__logo" />
+          <div>
+            <div class="case-card__type"><i class="ph ph-shield-check"></i> شركة رائدة · الأمن الإلكتروني والشبكات</div>
+            <div class="case-card__name">Multitech El Idrissi</div>
+          </div>
         </div>
-        <span class="case-card__flag"><i class="ph ph-map-pin"></i> الدار البيضاء والنواحي</span>
+        <span class="case-card__flag"><i class="ph ph-map-pin"></i> الدار البيضاء</span>
       </div>
-      <div class="case-card__metrics">
-        <div>
-          <span class="case-metric__label">المجال</span>
-          <div class="case-metric__values"><i class="ph ph-camera"></i> الأمن الإلكتروني</div>
-        </div>
-        <div>
-          <span class="case-metric__label">اتصال مباشر</span>
-          <div class="case-metric__values"><i class="ph ph-phone"></i> 0661 488 276</div>
-        </div>
+      <p class="case-card__desc">المراقبة بالكاميرات، التحكم في الولوج وأنظمة الإنذار. أزيد من 5 سنوات من الخبرة ودعم تقني متوفر على مدار الساعة طيلة أيام الأسبوع.</p>
+      <div class="case-card__links">
+        <a href="tel:0661488276"><i class="ph ph-phone"></i> 0661 488 276</a>
+        <a href="tel:0661966744"><i class="ph ph-phone"></i> 0661 966 744</a>
+        <a href="mailto:contact@mutech.ma"><i class="ph ph-envelope"></i> contact@mutech.ma</a>
       </div>
-      <p class="case-card__desc">تأسست من طرف أحد أبناء القرية، وتتميز هذه الشركة في المراقبة بالكاميرات، التحكم في الولوج، وأنظمة الإنذار. الدعم التقني متوفر على مدار الساعة.</p>
-      <a href="https://www.multitechelidrissi.com/" target="_blank" class="btn btn--outline btn-sm" style="margin-top:var(--s-4);">زيارة الموقع الإلكتروني <i class="ph ph-arrow-left"></i></a>
+      <a href="https://www.multitechelidrissi.com/" target="_blank" rel="noopener" class="btn btn--outline btn-sm" style="margin-top:var(--s-4);">زيارة الموقع multitechelidrissi.com <i class="ph ph-arrow-square-out"></i></a>
     </div>
 
-    <div class="case-card reveal reveal-d1">
-      <div class="case-card__header">
-        <div>
-          <div class="case-card__type"><i class="ph ph-plant"></i> تعاونية محلية · الفلاحة</div>
-          <div class="case-card__name">زعفران أم جنيبة</div>
-        </div>
-        <span class="case-card__flag"><i class="ph ph-medal"></i> منتج محلي</span>
-      </div>
-      <p class="case-card__desc">إنتاج وتثمين زعفران أم جنيبة. المسير: حفيظ بوتمزكيدة. تعاونية تبرز الفلاحة الجبلية في الأطلس المتوسط والذهب الأحمر المغربي.</p>
-    </div>
-
-    <div class="case-card reveal reveal-d2">
-      <div class="case-card__header">
-        <div>
-          <div class="case-card__type"><i class="ph ph-needle-simple"></i> الصناعة التقليدية</div>
-          <div class="case-card__name">تعاونية تفرين تيشوكت</div>
+    <div class="izil-banner reveal reveal-d1">
+      <div class="izil-banner__bg"></div>
+      <div class="izil-banner__content">
+        <img src="../images/logo_izil.jpeg" alt="شعار Izil Elec" class="izil-banner__logo" />
+        <div class="izil-banner__info">
+          <span class="izil-banner__tag"><i class="ph ph-lightning"></i> كريم بوتعرورت · الكهرباء والتيار الضعيف</span>
+          <h3>Izil Elec</h3>
+          <p class="izil-banner__desc">الكهرباء العامة، تركيب مواقف السيارات والحواجز الأوتوماتيكية بقارئ <strong>UHF</strong>، وأنظمة التيار الضعيف. خبرة تقنية في خدمة الأفراد والمحترفين.</p>
+          <div class="izil-banner__links">
+            <a href="tel:0661293671"><i class="ph ph-phone"></i> 0661 293 671</a>
+            <a href="mailto:izilelec@gmail.com"><i class="ph ph-envelope"></i> izilelec@gmail.com</a>
+          </div>
         </div>
       </div>
-      <p class="case-card__desc">الصناعة التقليدية: نسج الزرابي، الفصالة، الخياطة والطرز الرفيع. الرئيسة: فاطمة أيوجيل. خبرة لا تقدر بثمن، تتوارث من الأم إلى الابنة، وتحافظ على تراث حي.</p>
     </div>
 
-    <div class="section-head reveal" style="margin-top:var(--s-20);">
+    <div class="ent-grid">
+      <div class="ent-item reveal">
+        <div class="ent-item__name">سعيد الإدريسي</div>
+        <div class="ent-item__sector"><i class="ph ph-road-horizon"></i> أشغال الطرق</div>
+      </div>
+      <div class="ent-item reveal reveal-d1">
+        <div class="ent-item__name">علي أوعبد الكريم</div>
+        <div class="ent-item__sector"><i class="ph ph-ruler"></i> الطوبوغرافيا · مهندس مساح</div>
+      </div>
+      <div class="ent-item reveal reveal-d2">
+        <div class="ent-item__name">سعيد أردوز (بن حدّو)</div>
+        <div class="ent-item__sector"><i class="ph ph-buildings"></i> البناء والتشييد</div>
+      </div>
+      <div class="ent-item reveal reveal-d3">
+        <div class="ent-item__name">عبد الله نايشا</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> مقاولة · تعليم العربية <em>(يُحدّد)</em></div>
+      </div>
+      <div class="ent-item reveal">
+        <div class="ent-item__name">علي نايشا (بن لحسن)</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> مقاولة <em>(القطاع يُحدّد)</em></div>
+      </div>
+      <div class="ent-item reveal reveal-d1">
+        <div class="ent-item__name">علي نايشا (بن سعيد)</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> مقاولة <em>(القطاع يُحدّد)</em></div>
+      </div>
+      <div class="ent-item reveal reveal-d2">
+        <div class="ent-item__name">حادة أردوز</div>
+        <div class="ent-item__sector"><i class="ph ph-storefront"></i> مقاولة ذاتية <em>(النشاط يُحدّد)</em></div>
+      </div>
+      <div class="ent-item reveal reveal-d3">
+        <div class="ent-item__name">حسن أيوجيل</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> مقاولة <em>(القطاع يُحدّد)</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAAWUNIYAT -->
+<section class="results-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">اقتصاد تضامني</span>
+      <h2>تعاونيات أم جنيبة</h2>
+      <p>خمس تعاونيات تنظّم وتثمّن منتجات المنطقة: الزعفران، الصناعة التقليدية والخدمات الفلاحية.</p>
+    </div>
+
+    <div class="assoc-grid">
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌾</span></div>
+        <div class="assoc-card__name">تعاونية لجوا</div>
+        <span class="assoc-card__domain">خدمات فلاحية</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> الرئيسة: أمينة أولحاج</div>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🧵</span></div>
+        <div class="assoc-card__name">تعاونية تفرين تيشوكت</div>
+        <span class="assoc-card__domain">صناعة تقليدية · نسيج، خياطة، طرز</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> الرئيسة: فاطمة أيوجيل</div>
+      </div>
+      <div class="assoc-card reveal reveal-d2">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🏔️</span></div>
+        <div class="assoc-card__name">تعاونية تيشوكت</div>
+        <span class="assoc-card__domain">النشاط يُحدّد لاحقاً</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> الرئيس: علي الإدريسي</div>
+      </div>
+      <div class="assoc-card reveal reveal-d3">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🤝</span></div>
+        <div class="assoc-card__name">تعاونية أم جنيبة للتضامن</div>
+        <span class="assoc-card__domain">التضامن</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> الرئيس: محمد بوتمزكيدة</div>
+      </div>
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌸</span></div>
+        <div class="assoc-card__name">تعاونية زعفران أم جنيبة</div>
+        <span class="assoc-card__domain">إنتاج الزعفران</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> المسير: حفيظ بوتمزكيدة</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JAMIYAT -->
+<section class="results-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
       <span class="eyebrow">الحياة الجمعوية</span>
       <h2>جمعيات نشطة</h2>
-      <p>المجتمع المدني في أم جنيبة منظم بشكل ملحوظ وملتزم بالتنمية الاجتماعية والدينية والثقافية للقرية.</p>
+      <p>المجتمع المدني في أم جنيبة منظّم بشكل ملحوظ: عشر جمعيات ملتزمة بالعمل الاجتماعي والديني والتعليم والتضامن.</p>
     </div>
-    
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s-6);">
-      <div class="case-card reveal" style="margin-bottom:0;">
-        <div class="case-card__type"><i class="ph ph-drop"></i> خدمات حيوية</div>
-        <div class="case-card__name" style="font-size:1.3rem;margin-top:8px;">جمعية أم جنيبة للماء</div>
-        <p class="case-card__desc" style="margin-top:8px;">إدارة صارمة، توزيع وصيانة يومية لشبكة الماء الصالح للشرب في القرية.</p>
+
+    <div class="assoc-grid">
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🤲</span><span class="assoc-card__num">01</span></div>
+        <div class="assoc-card__name">جمعية الأعمال الاجتماعية</div>
+        <span class="assoc-card__domain">اجتماعي</span>
       </div>
-      <div class="case-card reveal reveal-d1" style="margin-bottom:0;">
-        <div class="case-card__type"><i class="ph ph-users-three"></i> التنمية الاجتماعية</div>
-        <div class="case-card__name" style="font-size:1.3rem;margin-top:8px;">جمعية نساء تيشوكت</div>
-        <p class="case-card__desc" style="margin-top:8px;">تمكين نساء المنطقة من خلال الصناعة التقليدية، محو الأمية، والتكوين المستمر.</p>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">📖</span><span class="assoc-card__num">02</span></div>
+        <div class="assoc-card__name">جمعية علوم القرآن</div>
+        <span class="assoc-card__domain">ديني</span>
       </div>
-      <div class="case-card reveal reveal-d2" style="margin-bottom:0;">
-        <div class="case-card__type"><i class="ph ph-heart"></i> الإدماج الاجتماعي</div>
-        <div class="case-card__name" style="font-size:1.3rem;margin-top:8px;">جمعية السلام (الإعاقة)</div>
-        <p class="case-card__desc" style="margin-top:8px;">الدعم والمواكبة والمساعدة في إدماج الأشخاص في وضعية إعاقة داخل المجتمع.</p>
+      <div class="assoc-card reveal reveal-d2">
+        <div class="assoc-card__top"><span class="assoc-card__icon">💧</span><span class="assoc-card__num">03</span></div>
+        <div class="assoc-card__name">جمعية أم جنيبة للماء الصالح للشرب</div>
+        <span class="assoc-card__domain">الماء</span>
       </div>
-      <div class="case-card reveal reveal-d3" style="margin-bottom:0;">
-        <div class="case-card__type"><i class="ph ph-book-open"></i> الثقافة الدينية</div>
-        <div class="case-card__name" style="font-size:1.3rem;margin-top:8px;">جمعية علوم القرآن</div>
-        <p class="case-card__desc" style="margin-top:8px;">تعليم وتحفيظ ونشر علوم القرآن بين الأجيال الصاعدة.</p>
+      <div class="assoc-card reveal reveal-d3">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🤝</span><span class="assoc-card__num">04</span></div>
+        <div class="assoc-card__name">جمعية أم جنيبة للتضامن</div>
+        <span class="assoc-card__domain">تضامن</span>
+      </div>
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🎓</span><span class="assoc-card__num">05</span></div>
+        <div class="assoc-card__name">جمعية آباء وأولياء التلاميذ</div>
+        <span class="assoc-card__domain">تعليم</span>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">👩</span><span class="assoc-card__num">06</span></div>
+        <div class="assoc-card__name">جمعية نساء تيشوكت</div>
+        <span class="assoc-card__domain">نساء</span>
+      </div>
+      <div class="assoc-card reveal reveal-d2">
+        <div class="assoc-card__top"><span class="assoc-card__icon">♿</span><span class="assoc-card__num">07</span></div>
+        <div class="assoc-card__name">جمعية التحدي لذوي الاحتياجات الخاصة</div>
+        <span class="assoc-card__domain">احتياجات خاصة</span>
+      </div>
+      <div class="assoc-card reveal reveal-d3">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🕊️</span><span class="assoc-card__num">08</span></div>
+        <div class="assoc-card__name">جمعية السلام لرعاية المعاقين</div>
+        <span class="assoc-card__domain">إعاقة</span>
+      </div>
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌾</span><span class="assoc-card__num">09</span></div>
+        <div class="assoc-card__name">جمعية أم جنيبة للتنمية والتضامن الفلاحي</div>
+        <span class="assoc-card__domain">فلاحي</span>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌍</span><span class="assoc-card__num">10</span></div>
+        <div class="assoc-card__name">جمعية تنمية بلا حدود</div>
+        <span class="assoc-card__domain">تنمية</span>
       </div>
     </div>
   </div>
