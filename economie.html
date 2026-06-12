@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oumjniba | Économie & Associations</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ---- Activités économiques ---- */
+    .activity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--s-6);margin-top:var(--s-10);}
+    .activity-card{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:var(--s-8) var(--s-6);text-align:center;box-shadow:var(--sh-sm);transition:transform var(--t-base),box-shadow var(--t-base),border-color var(--t-base);}
+    .activity-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:var(--c-gold-lt);}
+    .activity-card__icon{font-size:2.6rem;line-height:1;}
+    .activity-card__title{font-family:var(--ff-head);font-size:1.2rem;color:var(--c-dark);margin-top:var(--s-3);}
+    .activity-card__desc{color:var(--c-ink-3);font-size:.9rem;margin-top:var(--s-2);}
+
+    /* ---- Logo dans une fiche entreprise ---- */
+    .case-card__head-flex{display:flex;align-items:center;gap:var(--s-4);}
+    .case-card__logo{height:54px;width:auto;max-width:120px;border-radius:var(--r-sm);object-fit:contain;background:#fff;border:1px solid var(--c-border);padding:4px;}
+    .case-card__links{display:flex;flex-wrap:wrap;gap:var(--s-3) var(--s-5);margin-top:var(--s-4);}
+    .case-card__links a,.case-card__links span{color:var(--c-ink-2);font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+    .case-card__links a:hover{color:var(--c-gold);}
+
+    /* ---- Bannière Izil Elec (image de fond) ---- */
+    .izil-banner{position:relative;border-radius:var(--r-lg);overflow:hidden;margin-bottom:var(--s-6);box-shadow:var(--sh-lg);}
+    .izil-banner__bg{position:absolute;inset:0;background:url('images/backizil.jpeg') center/cover no-repeat;}
+    .izil-banner__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(11,45,31,.93),rgba(7,32,15,.72));}
+    .izil-banner__content{position:relative;z-index:1;padding:var(--s-10) var(--s-8);color:#fff;display:flex;gap:var(--s-8);align-items:center;flex-wrap:wrap;}
+    .izil-banner__logo{height:90px;width:auto;border-radius:var(--r-md);background:#fff;padding:8px;flex-shrink:0;}
+    .izil-banner__info{flex:1;min-width:250px;}
+    .izil-banner__info h3{font-family:var(--ff-head);font-size:1.8rem;margin-bottom:6px;}
+    .izil-banner__tag{color:var(--c-gold-lt);font-weight:600;font-size:.95rem;}
+    .izil-banner__desc{color:rgba(255,255,255,.88);margin:var(--s-3) 0;line-height:1.6;}
+    .izil-banner__links{display:flex;flex-wrap:wrap;gap:var(--s-5);margin-top:var(--s-4);}
+    .izil-banner__links a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:500;}
+    .izil-banner__links a:hover{color:var(--c-gold-lt);}
+
+    /* ---- Grille d'entrepreneurs (cartes compactes) ---- */
+    .ent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:var(--s-5);margin-top:var(--s-8);}
+    .ent-item{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--r-md);padding:var(--s-5) var(--s-6);box-shadow:var(--sh-sm);transition:transform var(--t-base),box-shadow var(--t-base);}
+    .ent-item:hover{transform:translateY(-4px);box-shadow:var(--sh-md);}
+    .ent-item__name{font-family:var(--ff-head);font-size:1.15rem;color:var(--c-dark);}
+    .ent-item__sector{display:inline-flex;align-items:center;gap:6px;color:var(--c-gold);font-size:.85rem;font-weight:600;margin-top:6px;}
+
+    /* ---- Grille coopératives & associations ---- */
+    .assoc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:var(--s-5);margin-top:var(--s-8);}
+    .assoc-card{background:var(--c-white);border:1px solid var(--c-border);border-left:4px solid var(--c-gold);border-radius:var(--r-md);padding:var(--s-5) var(--s-6);box-shadow:var(--sh-sm);transition:transform var(--t-base),box-shadow var(--t-base);}
+    .assoc-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);}
+    .assoc-card__top{display:flex;align-items:center;justify-content:space-between;}
+    .assoc-card__icon{font-size:1.9rem;}
+    .assoc-card__num{color:var(--c-ink-3);font-size:.8rem;font-weight:700;}
+    .assoc-card__name{font-family:var(--ff-head);font-size:1.05rem;color:var(--c-dark);margin-top:8px;line-height:1.3;}
+    .assoc-card__name-ar{font-family:var(--ff-ar);color:var(--c-ink-3);font-size:.92rem;direction:rtl;margin-top:2px;}
+    .assoc-card__domain{display:inline-block;margin-top:10px;background:var(--c-gold-pale);color:var(--c-gold);font-size:.76rem;font-weight:600;padding:3px 11px;border-radius:999px;}
+    .coop-pres{display:inline-flex;align-items:center;gap:6px;color:var(--c-ink-3);font-size:.85rem;margin-top:8px;}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logOumjniba.png" alt="Logo Oumjniba" />
+        <span>Oumjniba</span>
+      </a>
+
+      <nav class="navbar__nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="village.html" class="nav-link">Le Village</a>
+        <a href="economie.html" class="nav-link active">Économie</a>
+        <a href="boutique.html" class="nav-link">Boutique</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="navbar__right">
+        <div class="lang-picker" id="langPicker">
+          <button class="lang-picker__btn">
+            <i class="ph ph-globe"></i> FR <i class="ph ph-caret-down"></i>
+          </button>
+          <div class="lang-picker__dropdown">
+            <a href="economie.html" class="lang-picker__item active">Français</a>
+            <a href="ar/economie.html" class="lang-picker__item">العربية</a>
+            <a href="en/economie.html" class="lang-picker__item">English</a>
+            <a href="tamazight/economie.html" class="lang-picker__item">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+          </div>
+        </div>
+        <div class="burger" id="burgerMenu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-menu__nav">
+    <a href="index.html" class="mobile-menu__link">Accueil</a>
+    <a href="village.html" class="mobile-menu__link">Le Village</a>
+    <a href="economie.html" class="mobile-menu__link active">Économie</a>
+    <a href="boutique.html" class="mobile-menu__link">Boutique</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+  </nav>
+  <div class="mobile-menu__langs">
+    <a href="economie.html" style="color:var(--c-gold)">FR</a>
+    <a href="ar/economie.html">AR</a>
+    <a href="en/economie.html">EN</a>
+    <a href="tamazight/economie.html">TAM</a>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="eyebrow eyebrow--light reveal"><i class="ph ph-chart-line-up"></i> Tissu Économique</span>
+    <h1 class="reveal reveal-d1">Économie & Associations</h1>
+    <p class="reveal reveal-d2">Les acteurs qui dynamisent Oumjniba : savoir-faire du territoire, entrepreneurs fils du douar, coopératives et associations solidaires.</p>
+  </div>
+</div>
+
+<!-- ACTIVITES ECONOMIQUES -->
+<section class="results-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Savoir-faire du territoire</span>
+      <h2>Activités économiques</h2>
+      <p>Une économie de montagne ancrée dans la terre, l'élevage et l'artisanat, transmise de génération en génération au pied du Tichoukt.</p>
+    </div>
+
+    <div class="activity-grid">
+      <div class="activity-card reveal">
+        <div class="activity-card__icon">🐑</div>
+        <div class="activity-card__title">Élevage</div>
+        <div class="activity-card__desc">Éleveurs &amp; bergers — troupeaux ovins et caprins adaptés à l'altitude.</div>
+      </div>
+      <div class="activity-card reveal reveal-d1">
+        <div class="activity-card__icon">🍯</div>
+        <div class="activity-card__title">Apiculture</div>
+        <div class="activity-card__desc">Miel de montagne, récolté sur les fleurs sauvages du Moyen Atlas.</div>
+      </div>
+      <div class="activity-card reveal reveal-d2">
+        <div class="activity-card__icon">🧶</div>
+        <div class="activity-card__title">Artisanat</div>
+        <div class="activity-card__desc">Tissage &amp; tapis berbères, un patrimoine vivant transmis de mère en fille.</div>
+      </div>
+      <div class="activity-card reveal reveal-d3">
+        <div class="activity-card__icon">🏔️</div>
+        <div class="activity-card__title">Tourisme</div>
+        <div class="activity-card__desc">Tourisme de montagne : randonnée, neige et écotourisme.</div>
+      </div>
+      <div class="activity-card reveal reveal-d4">
+        <div class="activity-card__icon">🌾</div>
+        <div class="activity-card__title">Agriculture</div>
+        <div class="activity-card__desc">Cultures d'altitude, dont le précieux safran « or rouge ».</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTREPRENEURS -->
+<section class="results-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Fils du douar</span>
+      <h2>Entrepreneurs originaires d'Oumjniba</h2>
+      <p>Des hommes et des femmes qui portent haut le nom d'Oumjniba, du Moyen Atlas jusqu'aux grandes villes du Royaume.</p>
+    </div>
+
+    <!-- Multitech El Idrissi -->
+    <div class="case-card reveal">
+      <div class="case-card__header">
+        <div class="case-card__head-flex">
+          <img src="images/log_multitech.jpeg" alt="Logo Multitech El Idrissi" class="case-card__logo" />
+          <div>
+            <div class="case-card__type"><i class="ph ph-shield-check"></i> Entreprise Phare · Sécurité électronique &amp; réseaux</div>
+            <div class="case-card__name">Multitech El Idrissi</div>
+          </div>
+        </div>
+        <span class="case-card__flag"><i class="ph ph-map-pin"></i> Casablanca</span>
+      </div>
+      <p class="case-card__desc">Vidéosurveillance, contrôle d'accès et systèmes d'alarme. Plus de 5 ans d'expérience et un support technique disponible 24h/24, 7j/7.</p>
+      <div class="case-card__links">
+        <a href="tel:0661488276"><i class="ph ph-phone"></i> 0661 488 276</a>
+        <a href="tel:0661966744"><i class="ph ph-phone"></i> 0661 966 744</a>
+        <a href="mailto:contact@mutech.ma"><i class="ph ph-envelope"></i> contact@mutech.ma</a>
+      </div>
+      <a href="https://www.multitechelidrissi.com/" target="_blank" rel="noopener" class="btn btn--outline btn-sm" style="margin-top:var(--s-4);">Visiter multitechelidrissi.com <i class="ph ph-arrow-square-out"></i></a>
+    </div>
+
+    <!-- Izil Elec -->
+    <div class="izil-banner reveal reveal-d1">
+      <div class="izil-banner__bg"></div>
+      <div class="izil-banner__content">
+        <img src="images/logo_izil.jpeg" alt="Logo Izil Elec" class="izil-banner__logo" />
+        <div class="izil-banner__info">
+          <span class="izil-banner__tag"><i class="ph ph-lightning"></i> Karim Boutaârourt · Électricité &amp; courant faible</span>
+          <h3>Izil Elec</h3>
+          <p class="izil-banner__desc">Électricité générale, installation de parkings et de barrières automatiques avec lecteur <strong>UHF</strong>, ainsi que les systèmes courant faible. Un savoir-faire technique au service des particuliers et des professionnels.</p>
+          <div class="izil-banner__links">
+            <a href="tel:0661293671"><i class="ph ph-phone"></i> 0661 293 671</a>
+            <a href="mailto:izilelec@gmail.com"><i class="ph ph-envelope"></i> izilelec@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Autres entrepreneurs -->
+    <div class="ent-grid">
+      <div class="ent-item reveal">
+        <div class="ent-item__name">Saïd El Idrissi</div>
+        <div class="ent-item__sector"><i class="ph ph-road-horizon"></i> Travaux routiers</div>
+      </div>
+      <div class="ent-item reveal reveal-d1">
+        <div class="ent-item__name">Ali Ou Abdelkrim</div>
+        <div class="ent-item__sector"><i class="ph ph-ruler"></i> Topographie · Géomètre-topographe</div>
+      </div>
+      <div class="ent-item reveal reveal-d2">
+        <div class="ent-item__name">Saïd Ardouz (ben Haddou)</div>
+        <div class="ent-item__sector"><i class="ph ph-buildings"></i> Bâtiment &amp; construction</div>
+      </div>
+      <div class="ent-item reveal reveal-d3">
+        <div class="ent-item__name">Abdellah Naïcha</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> Entreprise · enseignement de l'arabe <em>(à préciser)</em></div>
+      </div>
+      <div class="ent-item reveal">
+        <div class="ent-item__name">Ali Naïcha (ben Lhsen)</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> Entreprise <em>(secteur à préciser)</em></div>
+      </div>
+      <div class="ent-item reveal reveal-d1">
+        <div class="ent-item__name">Ali Naïcha (ben Saïd)</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> Entreprise <em>(secteur à préciser)</em></div>
+      </div>
+      <div class="ent-item reveal reveal-d2">
+        <div class="ent-item__name">Hada Ardouz</div>
+        <div class="ent-item__sector"><i class="ph ph-storefront"></i> Auto-entreprise <em>(activité à préciser)</em></div>
+      </div>
+      <div class="ent-item reveal reveal-d3">
+        <div class="ent-item__name">Hassan Ayoujil</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> Entreprise <em>(secteur à préciser)</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COOPERATIVES -->
+<section class="results-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Économie solidaire</span>
+      <h2>Coopératives d'Oumjniba</h2>
+      <p>Cinq coopératives qui structurent et valorisent les productions du terroir : safran, artisanat et services agricoles.</p>
+    </div>
+
+    <div class="assoc-grid">
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌾</span></div>
+        <div class="assoc-card__name">Coopérative Lajwa</div>
+        <span class="assoc-card__domain">Services agricoles</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Présidente : Amina Oulhaj</div>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🧵</span></div>
+        <div class="assoc-card__name">Coopérative Tafrine Tichoukt</div>
+        <span class="assoc-card__domain">Artisanat · tissage, couture, broderie</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Présidente : Fatima Ayoujil</div>
+      </div>
+      <div class="assoc-card reveal reveal-d2">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🏔️</span></div>
+        <div class="assoc-card__name">Coopérative Tichoukt</div>
+        <span class="assoc-card__domain">Activité à préciser</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Président : Ali El Idrissi</div>
+      </div>
+      <div class="assoc-card reveal reveal-d3">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🤝</span></div>
+        <div class="assoc-card__name">Coopérative Oumjniba pour la solidarité</div>
+        <span class="assoc-card__domain">Solidarité</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Président : Mohamed Boutmazguida</div>
+      </div>
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌸</span></div>
+        <div class="assoc-card__name">Coopérative Safran d'Oumjniba</div>
+        <span class="assoc-card__domain">Production de safran</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Gérant : Hafid Boutmazguida</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASSOCIATIONS -->
+<section class="results-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Vie Associative</span>
+      <h2>Associations actives</h2>
+      <p>La société civile d'Oumjniba est remarquablement organisée : dix associations engagées pour le social, le religieux, l'éducation et la solidarité.</p>
+    </div>
+
+    <div class="assoc-grid">
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🤲</span><span class="assoc-card__num">01</span></div>
+        <div class="assoc-card__name">Association des œuvres sociales</div>
+        <div class="assoc-card__name-ar">جمعية الأعمال الاجتماعية</div>
+        <span class="assoc-card__domain">Social</span>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">📖</span><span class="assoc-card__num">02</span></div>
+        <div class="assoc-card__name">Association des sciences du Coran</div>
+        <div class="assoc-card__name-ar">جمعية علوم القرآن</div>
+        <span class="assoc-card__domain">Religieux</span>
+      </div>
+      <div class="assoc-card reveal reveal-d2">
+        <div class="assoc-card__top"><span class="assoc-card__icon">💧</span><span class="assoc-card__num">03</span></div>
+        <div class="assoc-card__name">Association Oumjniba pour l'eau potable</div>
+        <div class="assoc-card__name-ar">جمعية أم جنيبة للماء الصالح للشرب</div>
+        <span class="assoc-card__domain">Eau</span>
+      </div>
+      <div class="assoc-card reveal reveal-d3">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🤝</span><span class="assoc-card__num">04</span></div>
+        <div class="assoc-card__name">Association Oumjniba pour la solidarité</div>
+        <div class="assoc-card__name-ar">جمعية أم جنيبة للتضامن</div>
+        <span class="assoc-card__domain">Solidarité</span>
+      </div>
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🎓</span><span class="assoc-card__num">05</span></div>
+        <div class="assoc-card__name">Association des parents et tuteurs d'élèves</div>
+        <div class="assoc-card__name-ar">جمعية آباء وأولياء التلاميذ</div>
+        <span class="assoc-card__domain">Éducation</span>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">👩</span><span class="assoc-card__num">06</span></div>
+        <div class="assoc-card__name">Association des femmes de Tichoukt</div>
+        <div class="assoc-card__name-ar">جمعية نساء تيشوكت</div>
+        <span class="assoc-card__domain">Femmes</span>
+      </div>
+      <div class="assoc-card reveal reveal-d2">
+        <div class="assoc-card__top"><span class="assoc-card__icon">♿</span><span class="assoc-card__num">07</span></div>
+        <div class="assoc-card__name">Association Ettahaddi (Le Défi) pour les personnes à besoins spécifiques</div>
+        <div class="assoc-card__name-ar">جمعية التحدي لذوي الاحتياجات الخاصة</div>
+        <span class="assoc-card__domain">Inclusion</span>
+      </div>
+      <div class="assoc-card reveal reveal-d3">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🕊️</span><span class="assoc-card__num">08</span></div>
+        <div class="assoc-card__name">Association Essalam pour la prise en charge des personnes handicapées</div>
+        <div class="assoc-card__name-ar">جمعية السلام لرعاية المعاقين</div>
+        <span class="assoc-card__domain">Handicap</span>
+      </div>
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌾</span><span class="assoc-card__num">09</span></div>
+        <div class="assoc-card__name">Association Oumjniba pour le développement et la solidarité agricole</div>
+        <div class="assoc-card__name-ar">جمعية أم جنيبة للتنمية والتضامن الفلاحي</div>
+        <span class="assoc-card__domain">Agricole</span>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌍</span><span class="assoc-card__num">10</span></div>
+        <div class="assoc-card__name">Association Développement sans frontières</div>
+        <div class="assoc-card__name-ar">جمعية تنمية بلا حدود</div>
+        <span class="assoc-card__domain">Développement</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="images/logOumjniba.png" alt="Oumjniba Logo" class="footer__logo" />
+        <p>Le portail officiel du douar Oumjniba. Un pont entre les habitants, la diaspora et les amoureux du Moyen Atlas.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph ph-youtube-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <a href="index.html">Accueil</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="village.html">Histoire du Village</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="economie.html">Économie Locale</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="boutique.html">Boutique & Terroir</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="contact.html">Contact & Localisation</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Commune</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <span>Commune rurale d'El Mers</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Province de Boulemane</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Région Fès-Meknès</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>Maroc</span></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Nous situer</h4>
+        <ul>
+          <li><i class="ph ph-map-pin"></i> <span>Coordonnées GPS:<br>33°19′39″ N, 4°41′07″ O</span></li>
+          <li><i class="ph ph-envelope"></i> <span>CP: 33102</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      &copy; 2026 <strong>Oumjniba</strong>. Tous droits réservés.
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

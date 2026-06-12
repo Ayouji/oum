@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zgh" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ⵓⵎⵊⵏⵉⴱⴰ | ⵜⴰⴷⴰⵎⵙⴰ ⴷ ⵜⵉⵎⵙⵎⵓⵏⵉⵏ</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .activity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--s-6);margin-top:var(--s-10);}
+    .activity-card{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:var(--s-8) var(--s-6);text-align:center;box-shadow:var(--sh-sm);transition:transform var(--t-base),box-shadow var(--t-base),border-color var(--t-base);}
+    .activity-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:var(--c-gold-lt);}
+    .activity-card__icon{font-size:2.6rem;line-height:1;}
+    .activity-card__title{font-family:var(--ff-head);font-size:1.2rem;color:var(--c-dark);margin-top:var(--s-3);}
+    .activity-card__desc{color:var(--c-ink-3);font-size:.9rem;margin-top:var(--s-2);}
+    .case-card__head-flex{display:flex;align-items:center;gap:var(--s-4);}
+    .case-card__logo{height:54px;width:auto;max-width:120px;border-radius:var(--r-sm);object-fit:contain;background:#fff;border:1px solid var(--c-border);padding:4px;}
+    .case-card__links{display:flex;flex-wrap:wrap;gap:var(--s-3) var(--s-5);margin-top:var(--s-4);}
+    .case-card__links a,.case-card__links span{color:var(--c-ink-2);font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+    .case-card__links a:hover{color:var(--c-gold);}
+    .izil-banner{position:relative;border-radius:var(--r-lg);overflow:hidden;margin-bottom:var(--s-6);box-shadow:var(--sh-lg);}
+    .izil-banner__bg{position:absolute;inset:0;background:url('../images/backizil.jpeg') center/cover no-repeat;}
+    .izil-banner__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(11,45,31,.93),rgba(7,32,15,.72));}
+    .izil-banner__content{position:relative;z-index:1;padding:var(--s-10) var(--s-8);color:#fff;display:flex;gap:var(--s-8);align-items:center;flex-wrap:wrap;}
+    .izil-banner__logo{height:90px;width:auto;border-radius:var(--r-md);background:#fff;padding:8px;flex-shrink:0;}
+    .izil-banner__info{flex:1;min-width:250px;}
+    .izil-banner__info h3{font-family:var(--ff-head);font-size:1.8rem;margin-bottom:6px;}
+    .izil-banner__tag{color:var(--c-gold-lt);font-weight:600;font-size:.95rem;}
+    .izil-banner__desc{color:rgba(255,255,255,.88);margin:var(--s-3) 0;line-height:1.6;}
+    .izil-banner__links{display:flex;flex-wrap:wrap;gap:var(--s-5);margin-top:var(--s-4);}
+    .izil-banner__links a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:500;}
+    .izil-banner__links a:hover{color:var(--c-gold-lt);}
+    .ent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:var(--s-5);margin-top:var(--s-8);}
+    .ent-item{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--r-md);padding:var(--s-5) var(--s-6);box-shadow:var(--sh-sm);transition:transform var(--t-base),box-shadow var(--t-base);}
+    .ent-item:hover{transform:translateY(-4px);box-shadow:var(--sh-md);}
+    .ent-item__name{font-family:var(--ff-head);font-size:1.15rem;color:var(--c-dark);}
+    .ent-item__sector{display:inline-flex;align-items:center;gap:6px;color:var(--c-gold);font-size:.85rem;font-weight:600;margin-top:6px;}
+    .assoc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:var(--s-5);margin-top:var(--s-8);}
+    .assoc-card{background:var(--c-white);border:1px solid var(--c-border);border-left:4px solid var(--c-gold);border-radius:var(--r-md);padding:var(--s-5) var(--s-6);box-shadow:var(--sh-sm);transition:transform var(--t-base),box-shadow var(--t-base);}
+    .assoc-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);}
+    .assoc-card__top{display:flex;align-items:center;justify-content:space-between;}
+    .assoc-card__icon{font-size:1.9rem;}
+    .assoc-card__num{color:var(--c-ink-3);font-size:.8rem;font-weight:700;}
+    .assoc-card__name{font-family:var(--ff-head);font-size:1.05rem;color:var(--c-dark);margin-top:8px;line-height:1.3;}
+    .assoc-card__domain{display:inline-block;margin-top:10px;background:var(--c-gold-pale);color:var(--c-gold);font-size:.76rem;font-weight:600;padding:3px 11px;border-radius:999px;}
+    .coop-pres{display:inline-flex;align-items:center;gap:6px;color:var(--c-ink-3);font-size:.85rem;margin-top:8px;}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="../images/logOumjniba.png" alt="Oumjniba Logo" />
+        <span>ⵓⵎⵊⵏⵉⴱⴰ</span>
+      </a>
+
+      <nav class="navbar__nav">
+        <a href="index.html" class="nav-link">ⴰⵙⵏⵓⴱⴳ</a>
+        <a href="village.html" class="nav-link">ⴰⴷⵡⵡⴰⵕ</a>
+        <a href="economie.html" class="nav-link active">ⵜⴰⴷⴰⵎⵙⴰ</a>
+        <a href="boutique.html" class="nav-link">ⵜⴰⵃⴰⵏⵓⵜ</a>
+        <a href="contact.html" class="nav-link">ⴰⵏⵢⴰⵍⴽⴰⵎ</a>
+      </nav>
+
+      <div class="navbar__right">
+        <div class="lang-picker" id="langPicker">
+          <button class="lang-picker__btn">
+            <i class="ph ph-globe"></i> TZ <i class="ph ph-caret-down"></i>
+          </button>
+          <div class="lang-picker__dropdown">
+            <a href="../economie.html" class="lang-picker__item">Français</a>
+            <a href="../ar/economie.html" class="lang-picker__item">العربية</a>
+            <a href="../en/economie.html" class="lang-picker__item">English</a>
+            <a href="economie.html" class="lang-picker__item active">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+          </div>
+        </div>
+        <div class="burger" id="burgerMenu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-menu__nav">
+    <a href="index.html" class="mobile-menu__link">ⴰⵙⵏⵓⴱⴳ</a>
+    <a href="village.html" class="mobile-menu__link">ⴰⴷⵡⵡⴰⵕ</a>
+    <a href="economie.html" class="mobile-menu__link active">ⵜⴰⴷⴰⵎⵙⴰ</a>
+    <a href="boutique.html" class="mobile-menu__link">ⵜⴰⵃⴰⵏⵓⵜ</a>
+    <a href="contact.html" class="mobile-menu__link">ⴰⵏⵢⴰⵍⴽⴰⵎ</a>
+  </nav>
+  <div class="mobile-menu__langs">
+    <a href="../economie.html">FR</a>
+    <a href="../ar/economie.html">AR</a>
+    <a href="../en/economie.html">EN</a>
+    <a href="economie.html" style="color:var(--c-gold)">TAM</a>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="eyebrow eyebrow--light reveal"><i class="ph ph-chart-line-up"></i> ⵜⴰⴷⴰⵎⵙⴰ</span>
+    <h1 class="reveal reveal-d1">ⵜⴰⴷⴰⵎⵙⴰ ⴷ ⵜⵉⵎⵙⵎⵓⵏⵉⵏ</h1>
+  </div>
+</div>
+
+<!-- TIMHAL TIDAMSANIN -->
+<section class="results-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">ⵜⵓⵙⵙⵏⴰ ⵏ ⵡⴰⴽⴰⵍ</span>
+      <h2>ⵜⵉⵎⵀⴰⵍ ⵜⵉⴷⴰⵎⵙⴰⵏⵉⵏ</h2>
+    </div>
+
+    <div class="activity-grid">
+      <div class="activity-card reveal">
+        <div class="activity-card__icon">🐑</div>
+        <div class="activity-card__title">ⵜⴰⵎⴽⵙⴰ</div>
+        <div class="activity-card__desc">ⵉⵎⴽⵙⴰⵡⵏ — ⵓⵍⵍⵉ ⴷ ⵉⵖⵉⴷⵏ.</div>
+      </div>
+      <div class="activity-card reveal reveal-d1">
+        <div class="activity-card__icon">🍯</div>
+        <div class="activity-card__title">ⵜⴰⵎⵎⵏⵜ</div>
+        <div class="activity-card__desc">ⵜⴰⵎⵎⵏⵜ ⵏ ⵡⴰⴷⵔⴰⵔ ⵏ ⵡⴰⵟⵍⴰⵚ ⴰⵏⴰⵎⵎⴰⵙ.</div>
+      </div>
+      <div class="activity-card reveal reveal-d2">
+        <div class="activity-card__icon">🧶</div>
+        <div class="activity-card__title">ⵜⴰⵎⴳⵓⵔⵉ ⵜⴰⵏⵙⴰⵢⵜ</div>
+        <div class="activity-card__desc">ⴰⵥⴹⴰ ⴷ ⵜⵉⵣⵔⴱⵉⵏ ⵜⵉⵎⴰⵣⵉⵖⵉⵏ.</div>
+      </div>
+      <div class="activity-card reveal reveal-d3">
+        <div class="activity-card__icon">🏔️</div>
+        <div class="activity-card__title">ⵜⵓⵔⵉⵣⵎ</div>
+        <div class="activity-card__desc">ⵜⵓⵔⵉⵣⵎ ⵏ ⵡⴰⴷⵔⴰⵔ : ⴰⵙⵉⴽⵍ, ⴰⴷⴼⵍ ⴷ ⵜⵡⵏⵏⴰⴹⵜ.</div>
+      </div>
+      <div class="activity-card reveal reveal-d4">
+        <div class="activity-card__icon">🌾</div>
+        <div class="activity-card__title">ⵜⴰⴽⵔⵣⴰ</div>
+        <div class="activity-card__desc">ⵜⵉⴽⵔⵣⴰ ⵏ ⵡⴰⴷⵔⴰⵔ, ⴰⵎ ⵓⵣⵄⴼⵔⴰⵏ « ⵓⵔⵖ ⴰⵣⴳⴳⵯⴰⵖ ».</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMSSURTN -->
+<section class="results-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">ⴰⵢⵜ ⵓⴷⵡⵡⴰⵕ</span>
+      <h2>ⵉⵎⵙⵙⵓⵔⵜⵏ ⵏ ⵓⵎⵊⵏⵉⴱⴰ</h2>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-card__header">
+        <div class="case-card__head-flex">
+          <img src="../images/log_multitech.jpeg" alt="Multitech El Idrissi" class="case-card__logo" />
+          <div>
+            <div class="case-card__type"><i class="ph ph-shield-check"></i> ⵜⴰⵎⵙⵙⵓⵔⵜ · ⵜⴰⵏⴼⵔⵓⵜ ⵜⴰⵍⵉⴽⵟⵕⵓⵏⵉⵜ</div>
+            <div class="case-card__name">Multitech El Idrissi</div>
+          </div>
+        </div>
+        <span class="case-card__flag"><i class="ph ph-map-pin"></i> ⴰⵏⴼⴰ</span>
+      </div>
+      <div class="case-card__links">
+        <a href="tel:0661488276"><i class="ph ph-phone"></i> 0661 488 276</a>
+        <a href="tel:0661966744"><i class="ph ph-phone"></i> 0661 966 744</a>
+        <a href="mailto:contact@mutech.ma"><i class="ph ph-envelope"></i> contact@mutech.ma</a>
+      </div>
+      <a href="https://www.multitechelidrissi.com/" target="_blank" rel="noopener" class="btn btn--outline btn-sm" style="margin-top:var(--s-4);">multitechelidrissi.com <i class="ph ph-arrow-square-out"></i></a>
+    </div>
+
+    <div class="izil-banner reveal reveal-d1">
+      <div class="izil-banner__bg"></div>
+      <div class="izil-banner__content">
+        <img src="../images/logo_izil.jpeg" alt="Izil Elec" class="izil-banner__logo" />
+        <div class="izil-banner__info">
+          <span class="izil-banner__tag"><i class="ph ph-lightning"></i> Karim Boutaârourt · ⵜⵔⵉⵙⵉⵜⵉ</span>
+          <h3>Izil Elec</h3>
+          <p class="izil-banner__desc">ⵜⵔⵉⵙⵉⵜⵉ ⵜⴰⵎⴰⵜⴰⵢⵜ, ⴰⵙⴱⴷⴷⵉ ⵏ ⵉⵎⵓⵇⵇⴰⵔ ⴷ ⵉⵎⵏⴰⵄⵏ ⵉⵡⵓⵔⴰⵏ ⵙ <strong>UHF</strong>.</p>
+          <div class="izil-banner__links">
+            <a href="tel:0661293671"><i class="ph ph-phone"></i> 0661 293 671</a>
+            <a href="mailto:izilelec@gmail.com"><i class="ph ph-envelope"></i> izilelec@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ent-grid">
+      <div class="ent-item reveal">
+        <div class="ent-item__name">Saïd El Idrissi</div>
+        <div class="ent-item__sector"><i class="ph ph-road-horizon"></i> ⵉⵎⵓⵀⴰⵍ ⵏ ⵉⴱⵔⵉⴷⵏ</div>
+      </div>
+      <div class="ent-item reveal reveal-d1">
+        <div class="ent-item__name">Ali Ou Abdelkrim</div>
+        <div class="ent-item__sector"><i class="ph ph-ruler"></i> ⵟⵓⴱⵓⴳⵔⴰⴼⵉ</div>
+      </div>
+      <div class="ent-item reveal reveal-d2">
+        <div class="ent-item__name">Saïd Ardouz (ben Haddou)</div>
+        <div class="ent-item__sector"><i class="ph ph-buildings"></i> ⴰⴱⵏⵏⵓ ⴷ ⵓⵙⴽⴽⵉⵔ</div>
+      </div>
+      <div class="ent-item reveal reveal-d3">
+        <div class="ent-item__name">Abdellah Naïcha</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> ⵜⴰⵎⵙⵙⵓⵔⵜ <em>(ⴰⴷ ⵉⵜⵡⴰⵙⵎⴷ)</em></div>
+      </div>
+      <div class="ent-item reveal">
+        <div class="ent-item__name">Ali Naïcha (ben Lhsen)</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> ⵜⴰⵎⵙⵙⵓⵔⵜ <em>(ⴰⴷ ⵉⵜⵡⴰⵙⵎⴷ)</em></div>
+      </div>
+      <div class="ent-item reveal reveal-d1">
+        <div class="ent-item__name">Ali Naïcha (ben Saïd)</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> ⵜⴰⵎⵙⵙⵓⵔⵜ <em>(ⴰⴷ ⵉⵜⵡⴰⵙⵎⴷ)</em></div>
+      </div>
+      <div class="ent-item reveal reveal-d2">
+        <div class="ent-item__name">Hada Ardouz</div>
+        <div class="ent-item__sector"><i class="ph ph-storefront"></i> ⵜⴰⵎⵙⵙⵓⵔⵜ ⵜⴰⵏⵉⵎⴰⵏⵜ <em>(ⴰⴷ ⵉⵜⵡⴰⵙⵎⴷ)</em></div>
+      </div>
+      <div class="ent-item reveal reveal-d3">
+        <div class="ent-item__name">Hassan Ayoujil</div>
+        <div class="ent-item__sector"><i class="ph ph-briefcase"></i> ⵜⴰⵎⵙⵙⵓⵔⵜ <em>(ⴰⴷ ⵉⵜⵡⴰⵙⵎⴷ)</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMYAWASIN -->
+<section class="results-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">ⵜⴰⴷⴰⵎⵙⴰ ⵜⴰⵎⵢⴰⵡⴰⵙⵜ</span>
+      <h2>ⵜⵉⵎⵢⴰⵡⴰⵙⵉⵏ ⵏ ⵓⵎⵊⵏⵉⴱⴰ</h2>
+    </div>
+
+    <div class="assoc-grid">
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌾</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵢⴰⵡⴰⵙⵜ ⵏ Lajwa</div>
+        <span class="assoc-card__domain">ⵜⵉⵏⴰⴼⵓⵜⵉⵏ ⵜⵉⴽⵔⵣⴰⵏⵉⵏ</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Amina Oulhaj</div>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🧵</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵢⴰⵡⴰⵙⵜ ⵏ ⵜⴰⴼⵔⵉⵏ ⵏ ⵜⵉⵛⵓⴽⵜ</div>
+        <span class="assoc-card__domain">ⵜⴰⵎⴳⵓⵔⵉ ⵜⴰⵏⵙⴰⵢⵜ</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Fatima Ayoujil</div>
+      </div>
+      <div class="assoc-card reveal reveal-d2">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🏔️</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵢⴰⵡⴰⵙⵜ ⵏ ⵜⵉⵛⵓⴽⵜ</div>
+        <span class="assoc-card__domain">ⴰⴷ ⵉⵜⵡⴰⵙⵎⴷ</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Ali El Idrissi</div>
+      </div>
+      <div class="assoc-card reveal reveal-d3">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🤝</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵢⴰⵡⴰⵙⵜ ⵏ ⵓⵎⵢⴰⵡⴰⵙ</div>
+        <span class="assoc-card__domain">ⴰⵎⵢⴰⵡⴰⵙ</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Mohamed Boutmazguida</div>
+      </div>
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌸</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵢⴰⵡⴰⵙⵜ ⵏ ⵓⵣⵄⴼⵔⴰⵏ ⵏ ⵓⵎⵊⵏⵉⴱⴰ</div>
+        <span class="assoc-card__domain">ⴰⵣⵄⴼⵔⴰⵏ</span>
+        <div class="coop-pres"><i class="ph ph-user"></i> Hafid Boutmazguida</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMSMUNIN -->
+<section class="results-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">ⵜⵓⴷⵔⵜ ⵜⴰⵎⵙⵎⵓⵏⵜ</span>
+      <h2>ⵜⵉⵎⵙⵎⵓⵏⵉⵏ</h2>
+    </div>
+
+    <div class="assoc-grid">
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🤲</span><span class="assoc-card__num">01</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ</div>
+        <span class="assoc-card__domain">ⴰⵏⴰⵎⵓⵏ</span>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">📖</span><span class="assoc-card__num">02</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵜⵓⵙⵙⵏⵉⵡⵉⵏ ⵏ ⵍⵇⵯⵕⴰⵏ</div>
+        <span class="assoc-card__domain">ⴰⵙⴳⴷ</span>
+      </div>
+      <div class="assoc-card reveal reveal-d2">
+        <div class="assoc-card__top"><span class="assoc-card__icon">💧</span><span class="assoc-card__num">03</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵡⴰⵎⴰⵏ ⵉⵥⵉⴷⵏ</div>
+        <span class="assoc-card__domain">ⴰⵎⴰⵏ</span>
+      </div>
+      <div class="assoc-card reveal reveal-d3">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🤝</span><span class="assoc-card__num">04</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵓⵎⵢⴰⵡⴰⵙ</div>
+        <span class="assoc-card__domain">ⴰⵎⵢⴰⵡⴰⵙ</span>
+      </div>
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🎓</span><span class="assoc-card__num">05</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵉⵎⴰⵡⵍⴰⵏ ⵏ ⵉⵏⵍⵎⴰⴷⵏ</div>
+        <span class="assoc-card__domain">ⴰⵙⵍⵎⴷ</span>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">👩</span><span class="assoc-card__num">06</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵜⵉⵎⵖⴰⵔⵉⵏ ⵏ ⵜⵉⵛⵓⴽⵜ</div>
+        <span class="assoc-card__domain">ⵜⵉⵎⵖⴰⵔⵉⵏ</span>
+      </div>
+      <div class="assoc-card reveal reveal-d2">
+        <div class="assoc-card__top"><span class="assoc-card__icon">♿</span><span class="assoc-card__num">07</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵓⵎⵏⵖⵉ (Ettahaddi)</div>
+        <span class="assoc-card__domain">ⵉⵙⵎⵓⵜⵜⴳⵏ ⵉⵎⵥⵍⴰⵢⵏ</span>
+      </div>
+      <div class="assoc-card reveal reveal-d3">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🕊️</span><span class="assoc-card__num">08</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵙⵙⴰⵍⴰⵎ</div>
+        <span class="assoc-card__domain">ⴰⵏⵎⵓⴹ</span>
+      </div>
+      <div class="assoc-card reveal">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌾</span><span class="assoc-card__num">09</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵜⴳⵎⵉ ⴷ ⵓⵎⵢⴰⵡⴰⵙ ⴰⴽⵔⵣⴰⵏ</div>
+        <span class="assoc-card__domain">ⴰⴽⵔⵣⴰⵏ</span>
+      </div>
+      <div class="assoc-card reveal reveal-d1">
+        <div class="assoc-card__top"><span class="assoc-card__icon">🌍</span><span class="assoc-card__num">10</span></div>
+        <div class="assoc-card__name">ⵜⴰⵎⵙⵎⵓⵏⵜ ⵏ ⵜⴳⵎⵉ ⵡⴰⵔ ⵉⵣⵉⵍⴰⵍ</div>
+        <span class="assoc-card__domain">ⵜⴰⴳⵎⵉ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="../images/logOumjniba.png" alt="Oumjniba Logo" class="footer__logo" />
+        <p>ⴰⵙⵉⵜ ⵓⵏⵚⵉⴱ ⵏ ⵓⴷⵡⵡⴰⵕ ⵏ ⵓⵎⵊⵏⵉⴱⴰ.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph ph-youtube-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>ⴰⵙⵜⴰⵢ</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <a href="index.html">ⴰⵙⵏⵓⴱⴳ</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="village.html">ⴰⵎⵣⵔⵓⵢ</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="economie.html">ⵜⴰⴷⴰⵎⵙⴰ</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="boutique.html">ⵜⴰⵃⴰⵏⵓⵜ</a></li>
+          <li><i class="ph ph-caret-right"></i> <a href="contact.html">ⴰⵏⵢⴰⵍⴽⴰⵎ</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>ⵜⴰⴳⵔⴰⵡⵜ</h4>
+        <ul>
+          <li><i class="ph ph-caret-right"></i> <span>ⵜⴰⴳⵔⴰⵡⵜ ⵏ ⵍⵎⵔⵙ</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>ⵜⵙⴳⴰ ⵏ ⴱⵓⵍⵎⴰⵏ</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>ⵜⴰⵎⵏⴰⴹⵜ ⵏ ⴼⴰⵙ ⵎⴽⵏⴰⵙ</span></li>
+          <li><i class="ph ph-caret-right"></i> <span>ⵍⵎⵖⵔⵉⴱ</span></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>ⴰⵏⵙⴰ</h4>
+        <ul>
+          <li><i class="ph ph-map-pin"></i> <span>ⵉⵙⵎⵍⴰⵏ GPS:<br>33°19′39″ N, 4°41′07″ W</span></li>
+          <li><i class="ph ph-envelope"></i> <span>ⴰⵏⴳⴰⵍ ⴰⵙⴰⵡⴰⵢ: 33102</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      &copy; 2026 <strong>ⵓⵎⵊⵏⵉⴱⴰ</strong>. ⵉⵣⵔⴼⴰⵏ ⵎⴰⵕⵕⴰ ⵃⴼⴹⵏ.
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
